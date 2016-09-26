@@ -6,8 +6,8 @@
     <ProjectGuid>{50C29777-BEAF-462B-BBF8-28E41FF0D12D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProyectoTests</RootNamespace>
-    <AssemblyName>ProyectoTests</AssemblyName>
+    <RootNamespace>GestorPlantillasTests</RootNamespace>
+    <AssemblyName>GestorPlantillasTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
