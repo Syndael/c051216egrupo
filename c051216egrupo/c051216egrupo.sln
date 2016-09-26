@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyecto.csproj", "{08310490-A73D-43BA-BF07-B5A4935B438E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorPlantillas", "Proyecto\GestorPlantillas.csproj", "{08310490-A73D-43BA-BF07-B5A4935B438E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoTests", "ProyectoTests\ProyectoTests.csproj", "{50C29777-BEAF-462B-BBF8-28E41FF0D12D}"
 EndProject

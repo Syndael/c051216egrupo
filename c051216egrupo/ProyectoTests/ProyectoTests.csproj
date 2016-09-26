@@ -55,9 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Proyecto\Proyecto.csproj">
+    <ProjectReference Include="..\Proyecto\GestorPlantillas.csproj">
       <Project>{08310490-A73D-43BA-BF07-B5A4935B438E}</Project>
-      <Name>Proyecto</Name>
+      <Name>GestorPlantillas</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
