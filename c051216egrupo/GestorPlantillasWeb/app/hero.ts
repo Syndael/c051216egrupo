@@ -1,4 +1,4 @@
-export class Hero {
+export class Plantilla {
   id: number;
   name: string;
 }

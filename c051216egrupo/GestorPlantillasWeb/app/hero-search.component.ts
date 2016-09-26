@@ -4,7 +4,7 @@ import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
 
 import { HeroSearchService } from './hero-search.service';
-import { Hero } from './hero';
+import { Plantilla } from './hero';
 
 @Component({
   selector: 'hero-search',
@@ -13,7 +13,7 @@ import { Hero } from './hero';
   providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+  heroes: Observable<Plantilla[]>;
   private searchTerms = new Subject<string>();
 
   constructor(
@@ -33,15 +33,15 @@ export class HeroSearchComponent implements OnInit {
         // return the http search observable
         ? this.heroSearchService.search(term)
         // or the observable of empty heroes if no search term
-        : Observable.of<Hero[]>([]))
+        : Observable.of<Plantilla[]>([]))
       .catch(error => {
         // TODO: real error handling
         console.log(error);
-        return Observable.of<Hero[]>([]);
+        return Observable.of<Plantilla[]>([]);
       });
   }
 
-  gotoDetail(hero: Hero): void {
+  gotoDetail(hero: Plantilla): void {
     let link = ['/detail', hero.id];
     this.router.navigate(link);
   }

@@ -263,10 +263,14 @@
     <Content Include="app\app.component.css" />
     <Content Include="app\dashboard.component.css" />
     <Content Include="app\dashboard.component.html" />
+    <Content Include="app\plantilla-detail.component.css" />
+    <Content Include="app\plantilla-detail.component.html" />
     <Content Include="app\hero-detail.component.css" />
     <Content Include="app\hero-detail.component.html" />
     <Content Include="app\hero-search.component.css" />
     <Content Include="app\hero-search.component.html" />
+    <Content Include="app\plantillas.component.css" />
+    <Content Include="app\plantillas.component.html" />
     <Content Include="app\heroes.component.css" />
     <Content Include="app\heroes.component.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -305,6 +309,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
+    <TypeScriptCompile Include="app\plantilla-detail.component.ts" />
+    <TypeScriptCompile Include="app\plantillas.component.ts" />
+    <TypeScriptCompile Include="app\plantilla.service.ts" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
