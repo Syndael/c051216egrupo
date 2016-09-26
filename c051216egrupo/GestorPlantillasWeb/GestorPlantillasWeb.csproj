@@ -389,6 +389,9 @@
     <TypeScriptCompile Include="app\hero.ts" />
     <TypeScriptCompile Include="app\heroes.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\modelos\parametro.ts" />
+    <TypeScriptCompile Include="app\modelos\plantilla.ts" />
+    <TypeScriptCompile Include="app\modelos\tipo.ts" />
     <TypeScriptCompile Include="app\rxjs-extensions.ts" />
   </ItemGroup>
   <ItemGroup>
