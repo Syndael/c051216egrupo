@@ -35,7 +35,7 @@ export class PlantillasComponent implements OnInit {
 
   delete(plantilla: Plantilla): void {
       this.plantillaService
-        .delete(plantilla.id)
+        .delete(plantilla.id_plantilla)
         .then(() => {
           this.plantillas = this.plantillas.filter(p => p !== plantilla);
           if (this.selectedPlantilla === plantilla) { this.selectedPlantilla = null; }
@@ -51,7 +51,7 @@ export class PlantillasComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedPlantilla.id]);
+    this.router.navigate(['/detail', this.selectedPlantilla.id_plantilla]);
   }
 }
 

@@ -37,7 +37,7 @@ var PlantillasComponent = (function () {
     PlantillasComponent.prototype.delete = function (plantilla) {
         var _this = this;
         this.plantillaService
-            .delete(plantilla.id)
+            .delete(plantilla.id_plantilla)
             .then(function () {
             _this.plantillas = _this.plantillas.filter(function (p) { return p !== plantilla; });
             if (_this.selectedPlantilla === plantilla) {
@@ -52,7 +52,7 @@ var PlantillasComponent = (function () {
         this.selectedPlantilla = plantilla;
     };
     PlantillasComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedPlantilla.id]);
+        this.router.navigate(['/detail', this.selectedPlantilla.id_plantilla]);
     };
     PlantillasComponent = __decorate([
         core_1.Component({

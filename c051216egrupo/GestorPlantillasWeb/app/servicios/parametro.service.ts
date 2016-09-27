@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Parametro } from './modelos/parametro';
+import { Parametro } from './../modelos/parametro';
 
 @Injectable()
 export class ParametroService {
