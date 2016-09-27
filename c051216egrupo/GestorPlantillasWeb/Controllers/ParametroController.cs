@@ -1,12 +1,11 @@
 ﻿
+using GestorPlantillas.EntityVO;
+using GestorPlantillas.Repository;
+using GestorPlantillas.Service;
+using GestorPlantillas.Utility;
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Web.Http;
-using GestorPlantillas;
-using GestorPlantillas.Service;
-using GestorPlantillas.Utility;
-using GestorPlantillas.Repository;
-using GestorPlantillas.EntityVO;
 
 namespace GestorPlantillasWeb.Controllers
 {
@@ -18,7 +17,7 @@ namespace GestorPlantillasWeb.Controllers
         {
             var container = new UnityContainer();
             container.RegisterInstance<IParametroUtility>(new ParametroUtility());
-            container.RegisterType<ParametroRepository, ParametroRepository>();
+            container.RegisterType<IParametroRepository, ParametroRepository>();
             container.RegisterType<IParametroService, ParametroService>();
 
             parametroService = container.Resolve<IParametroService>();
