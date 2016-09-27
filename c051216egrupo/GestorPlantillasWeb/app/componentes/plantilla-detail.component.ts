@@ -9,7 +9,7 @@ import { PlantillaService } from './plantilla.service';
   templateUrl: 'app/plantilla-detail.component.html',
   styleUrls: ['app/plantila-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
+export class PlantillaDetailComponent implements OnInit {
   plantilla: Plantilla;
 
   constructor(

@@ -14,10 +14,9 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var dashboard_component_1 = require('./dashboard.component');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var hero_service_1 = require('./hero.service');
+var plantillas_component_1 = require('./plantillas.component');
+var plantilla_detail_component_1 = require('./plantilla-detail.component');
+var plantilla_service_1 = require('./plantilla.service');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -32,12 +31,11 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                dashboard_component_1.DashboardComponent,
-                hero_detail_component_1.HeroDetailComponent,
-                heroes_component_1.HeroesComponent
+                plantillas_component_1.PlantillasComponent,
+                plantilla_detail_component_1.PlantillaDetailComponent
             ],
             providers: [
-                hero_service_1.HeroService,
+                plantilla_service_1.PlantillaService,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
