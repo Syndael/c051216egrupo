@@ -11,12 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var plantilla_service_1 = require('./plantilla.service');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(plantillaService, route) {
+var PlantillaDetailComponent = (function () {
+    function PlantillaDetailComponent(plantillaService, route) {
         this.plantillaService = plantillaService;
         this.route = route;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    PlantillaDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
@@ -24,22 +24,22 @@ var HeroDetailComponent = (function () {
                 .then(function (plantilla) { return _this.plantilla = plantilla; });
         });
     };
-    HeroDetailComponent.prototype.save = function () {
+    PlantillaDetailComponent.prototype.save = function () {
         this.plantillaService.update(this.plantilla)
             .then(this.goBack);
     };
-    HeroDetailComponent.prototype.goBack = function () {
+    PlantillaDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
-    HeroDetailComponent = __decorate([
+    PlantillaDetailComponent = __decorate([
         core_1.Component({
             selector: 'detalle-plantilla',
             templateUrl: 'app/plantilla-detail.component.html',
             styleUrls: ['app/plantila-detail.component.css']
         }), 
         __metadata('design:paramtypes', [plantilla_service_1.PlantillaService, router_1.ActivatedRoute])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
+    ], PlantillaDetailComponent);
+    return PlantillaDetailComponent;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
+exports.PlantillaDetailComponent = PlantillaDetailComponent;
 //# sourceMappingURL=plantilla-detail.component.js.map

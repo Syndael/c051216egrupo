@@ -6,10 +6,9 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
-import { HeroService }          from './hero.service';
+import { PlantillasComponent }   from './plantillas.component';
+import { PlantillaDetailComponent }  from './plantilla-detail.component';
+import { PlantillaService }          from './plantilla.service';
 import { routing }              from './app.routing';
 
 @NgModule({
@@ -21,12 +20,11 @@ import { routing }              from './app.routing';
     ],
     declarations: [
         AppComponent,
-        DashboardComponent,
-        HeroDetailComponent,
-        HeroesComponent
+        PlantillasComponent,
+        PlantillaDetailComponent
     ],
     providers: [
-        HeroService,
+        PlantillaService,
     ],
     bootstrap: [AppComponent]
 })

@@ -220,19 +220,17 @@
     <Compile Include="Results\ChallengeResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.css" />
+    <Content Include="app\css\app.component.css" />
     <Content Include="app\css\styles.css" />
-    <Content Include="app\dashboard.component.css" />
-    <Content Include="app\dashboard.component.html" />
     <Content Include="app\imgs\cargando.gif" />
-    <Content Include="app\plantilla-detail.component.css" />
-    <Content Include="app\plantilla-detail.component.html" />
-    <Content Include="app\hero-detail.component.css" />
-    <Content Include="app\hero-detail.component.html" />
-    <Content Include="app\plantillas.component.css" />
-    <Content Include="app\plantillas.component.html" />
-    <Content Include="app\heroes.component.css" />
-    <Content Include="app\heroes.component.html" />
+    <Content Include="app\parametro-detail.component.css" />
+    <Content Include="app\parametro-detail.component.html" />
+    <Content Include="app\parametros.component.css" />
+    <Content Include="app\parametros.component.html" />
+    <Content Include="app\css\plantilla-detail.component.css" />
+    <Content Include="app\html\plantilla-detail.component.html" />
+    <Content Include="app\css\plantillas.component.css" />
+    <Content Include="app\html\plantillas.component.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -244,9 +242,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
-    <TypeScriptCompile Include="app\plantilla-detail.component.ts" />
-    <TypeScriptCompile Include="app\plantillas.component.ts" />
-    <TypeScriptCompile Include="app\plantilla.service.ts" />
+    <TypeScriptCompile Include="app\parametro-detail.component.ts" />
+    <TypeScriptCompile Include="app\parametros.component.ts" />
+    <TypeScriptCompile Include="app\componentes\plantilla-detail.component.ts" />
+    <TypeScriptCompile Include="app\componentes\plantillas.component.ts" />
+    <TypeScriptCompile Include="app\servicios\plantilla.service.ts" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -290,11 +290,6 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.ts" />
-    <TypeScriptCompile Include="app\dashboard.component.ts" />
-    <TypeScriptCompile Include="app\hero-detail.component.ts" />
-    <TypeScriptCompile Include="app\hero.service.ts" />
-    <TypeScriptCompile Include="app\hero.ts" />
-    <TypeScriptCompile Include="app\heroes.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\modelos\parametro.ts" />
     <TypeScriptCompile Include="app\modelos\plantilla.ts" />
