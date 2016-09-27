@@ -1,5 +1,4 @@
-﻿
-using GestorPlantilla.Service;
+﻿using GestorPlantilla.Service;
 using GestorPlantillas.EntityVO;
 using GestorPlantillas.Repository;
 using GestorPlantillas.Utility;
@@ -36,15 +35,15 @@ namespace GestorPlantillasWeb.Controllers
         }
 
         // POST api/values
-        public void Post(PlantillaVO _plantillaVO)
+        public PlantillaVO Post(PlantillaVO _plantillaVO)
         {
-            this.plantillaService.post(_plantillaVO);
+            return this.plantillaService.post(_plantillaVO);
         }
 
         // PUT api/values/5
-        public void Put(PlantillaVO _plantillaVO)
+        public PlantillaVO Put(PlantillaVO _plantillaVO)
         {
-            this.plantillaService.put(_plantillaVO);
+            return this.plantillaService.put(_plantillaVO);
         }
 
         // DELETE api/values/5

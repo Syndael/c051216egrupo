@@ -19,7 +19,7 @@ var PlantillaService = (function () {
         this.plantillasUrl = 'api/plantilla'; // URL to web api
     }
     PlantillaService.prototype.getPlantillas = function () {
-        return this.http.get(this.plantillasUrl, { headers: this.headers })
+        return this.http.get(this.plantillasUrl, { headers: this.headersAccept })
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
@@ -35,9 +35,13 @@ var PlantillaService = (function () {
             .then(function () { return null; })
             .catch(this.handleError);
     };
-    PlantillaService.prototype.create = function (name) {
+    PlantillaService.prototype.create = function (plantilla) {
         return this.http
-            .post(this.plantillasUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.plantillasUrl, JSON.stringify({
+            nombre: plantilla.nombre,
+            descripcion: plantilla.descripcion,
+            owner: plantilla.owner
+        }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json(); })
             .catch(this.handleError);

@@ -35,7 +35,7 @@ var ParametroDetailComponent = (function () {
         core_1.Component({
             selector: 'detalle-parametro',
             templateUrl: 'app/html/parametro-detail.component.html',
-            styleUrls: ['app/css/parametro-detail.component.css']
+            styleUrls: ['app/css/css-detail.component.css']
         }), 
         __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.ActivatedRoute])
     ], ParametroDetailComponent);

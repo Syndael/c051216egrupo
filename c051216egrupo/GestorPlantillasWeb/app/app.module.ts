@@ -8,7 +8,11 @@ import { HttpModule }    from '@angular/http';
 import { AppComponent }         from './app.component';
 import { PlantillasComponent }   from './componentes/plantillas.component';
 import { PlantillaDetailComponent }  from './componentes/plantilla-detail.component';
+import { PlantillaNewComponent }  from './componentes/plantilla-new.component';
 import { PlantillaService }          from './servicios/plantilla.service';
+import { ParametrosComponent }   from './componentes/parametros.component';
+import { ParametroDetailComponent }  from './componentes/parametro-detail.component';
+import { ParametroService }          from './servicios/parametro.service';
 import { routing }              from './app.routing';
 
 @NgModule({
@@ -21,10 +25,14 @@ import { routing }              from './app.routing';
     declarations: [
         AppComponent,
         PlantillasComponent,
-        PlantillaDetailComponent
+        PlantillaDetailComponent,
+        ParametrosComponent,
+        ParametroDetailComponent,
+        PlantillaNewComponent,
     ],
     providers: [
         PlantillaService,
+        ParametroService
     ],
     bootstrap: [AppComponent]
 })

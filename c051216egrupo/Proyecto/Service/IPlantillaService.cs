@@ -8,7 +8,7 @@ namespace GestorPlantilla.Service
         bool delete(int _id);
         PlantillaVO get(int _id);
         ICollection<PlantillaVO> lista();
-        bool post(PlantillaVO _plantillaVO);
-        bool put(PlantillaVO _plantillaVO);
+        PlantillaVO post(PlantillaVO _plantillaVO);
+        PlantillaVO put(PlantillaVO _plantillaVO);
     }
 }

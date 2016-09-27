@@ -10,36 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var plantilla_1 = require('./../modelos/plantilla');
 var plantilla_service_1 = require('./../servicios/plantilla.service');
-var PlantillaDetailComponent = (function () {
-    function PlantillaDetailComponent(plantillaService, route) {
+var PlantillaNewComponent = (function () {
+    function PlantillaNewComponent(plantillaService, route) {
         this.plantillaService = plantillaService;
         this.route = route;
     }
-    PlantillaDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.params.forEach(function (params) {
-            var id = +params['id'];
-            _this.plantillaService.getPlantilla(id)
-                .then(function (plantilla) { return _this.plantilla = plantilla; });
-        });
+    PlantillaNewComponent.prototype.ngOnInit = function () {
+        this.plantilla = new plantilla_1.Plantilla();
     };
-    PlantillaDetailComponent.prototype.save = function () {
-        this.plantillaService.update(this.plantilla)
+    PlantillaNewComponent.prototype.save = function () {
+        this.plantillaService.create(this.plantilla)
             .then(this.goBack);
     };
-    PlantillaDetailComponent.prototype.goBack = function () {
+    PlantillaNewComponent.prototype.goBack = function () {
         window.history.back();
     };
-    PlantillaDetailComponent = __decorate([
+    PlantillaNewComponent = __decorate([
         core_1.Component({
-            selector: 'detalle-plantilla',
+            selector: 'new-plantilla',
             templateUrl: 'app/html/plantilla-detail.component.html',
             styleUrls: ['app/css/css-detail.component.css']
         }), 
         __metadata('design:paramtypes', [plantilla_service_1.PlantillaService, router_1.ActivatedRoute])
-    ], PlantillaDetailComponent);
-    return PlantillaDetailComponent;
+    ], PlantillaNewComponent);
+    return PlantillaNewComponent;
 }());
-exports.PlantillaDetailComponent = PlantillaDetailComponent;
-//# sourceMappingURL=plantilla-detail.component.js.map
+exports.PlantillaNewComponent = PlantillaNewComponent;
+//# sourceMappingURL=plantilla-new.component.js.map

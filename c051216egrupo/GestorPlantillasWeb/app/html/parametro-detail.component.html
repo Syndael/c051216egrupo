@@ -1,13 +1,12 @@
 <div *ngIf="parametro">
-  <h2>Detalle del parametro: {{parametro.parametro}}</h2>
-  
+    <h2>Detalle del parametro: {{parametro.parametro}}</h2>
+
     <label>Nombre: </label>
     <input [(ngModel)]="parametro.parametro" placeholder="parametro" />
     <label>Tipo: </label>
     <input [(ngModel)]="parametro.tipo" placeholder="tipo" />
-   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+    <button (click)="goBack()">Cancelar</button>
+    <button (click)="save()">Guardar</button>
 </div>
 
 

@@ -240,13 +240,11 @@
     <Content Include="app\css\app.component.css" />
     <Content Include="app\css\styles.css" />
     <Content Include="app\imgs\cargando.gif" />
-    <Content Include="app\css\parametro-detail.component.css" />
     <Content Include="app\html\parametro-detail.component.html" />
-    <Content Include="app\css\parametros.component.css" />
     <Content Include="app\html\parametros.component.html" />
-    <Content Include="app\css\plantilla-detail.component.css" />
+    <Content Include="app\css\css-detail.component.css" />
     <Content Include="app\html\plantilla-detail.component.html" />
-    <Content Include="app\css\plantillas.component.css" />
+    <Content Include="app\css\css.component.css" />
     <Content Include="app\html\plantillas.component.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -257,6 +255,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
     <TypeScriptCompile Include="app\componentes\parametro-detail.component.ts" />
+    <TypeScriptCompile Include="app\componentes\plantilla-new.component.ts" />
     <TypeScriptCompile Include="app\servicios\parametro.service.ts" />
     <TypeScriptCompile Include="app\componentes\parametros.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantilla-detail.component.ts" />

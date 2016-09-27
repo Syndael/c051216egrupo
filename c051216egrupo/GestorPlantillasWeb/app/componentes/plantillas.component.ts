@@ -7,7 +7,7 @@ import { PlantillaService }         from './../servicios/plantilla.service';
 @Component({
   selector: 'mis-plantillas',
   templateUrl: 'app/html/plantillas.component.html',
-  styleUrls: ['app/css/plantillas.component.css']
+  styleUrls: ['app/css/css.component.css']
 })
 export class PlantillasComponent implements OnInit {
   plantillas: Plantilla[];
@@ -41,11 +41,11 @@ export class PlantillasComponent implements OnInit {
   }
 
   gotoDetail(plantillaArg: Plantilla): void {
-      this.router.navigate(['/detail', plantillaArg.id_plantilla]);
+      this.router.navigate(['/plantilla', plantillaArg.id_plantilla]);
   }
 
   gotoCrear(): void {
-      this.router.navigate(['/detail']);
+      this.router.navigate(['/new']);
   }
 }
 

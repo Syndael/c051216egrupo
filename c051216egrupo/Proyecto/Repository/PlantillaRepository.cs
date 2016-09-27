@@ -14,7 +14,7 @@ namespace GestorPlantillas.Repository
         private PlantillasDB plantillaDB;
         private IPlantillaUtility plantillaUtility;
 
-        
+
         public PlantillaRepository(PlantillasDB _plantillaDB, IPlantillaUtility _plantillaUtility)
         {
             this.plantillaDB = _plantillaDB;
@@ -27,7 +27,7 @@ namespace GestorPlantillas.Repository
             {
                 var listaPlantillas = plantillasDB.Plantillas.ToList<Plantilla>();
 
-                List<PlantillaVO> listaVO = listaPlantillas.ConvertAll<PlantillaVO>(delegate(Plantilla p)
+                List<PlantillaVO> listaVO = listaPlantillas.ConvertAll<PlantillaVO>(delegate (Plantilla p)
                 {
                     return this.plantillaUtility.convertEntity2VO(p);
                 });
@@ -47,11 +47,11 @@ namespace GestorPlantillas.Repository
                 pVO = this.plantillaUtility.convertEntity2VO(p);
             }
 
-            
+
             return pVO;
         }
 
-        public Boolean Post(PlantillaVO _plantillaVO)
+        public PlantillaVO Post(PlantillaVO _plantillaVO)
         {
             Plantilla _plantilla = this.plantillaUtility.convertVO2Entity(_plantillaVO);
 
@@ -60,7 +60,8 @@ namespace GestorPlantillas.Repository
                 _plantilla = plantillasDB.Plantillas.Add(_plantilla);
                 plantillasDB.SaveChanges();
             }
-            return true;
+            _plantillaVO = this.plantillaUtility.convertEntity2VO(_plantilla);
+            return _plantillaVO;
         }
 
         public Boolean Delete(int _id)
@@ -77,7 +78,7 @@ namespace GestorPlantillas.Repository
             return true;
         }
 
-        public Boolean Put(PlantillaVO _plantillaVO)
+        public PlantillaVO Put(PlantillaVO _plantillaVO)
         {
             Plantilla _plantilla = this.plantillaUtility.convertVO2Entity(_plantillaVO);
 
@@ -87,8 +88,8 @@ namespace GestorPlantillas.Repository
                 plantillasDB.Entry(_plantilla).State = System.Data.Entity.EntityState.Modified;
                 plantillasDB.SaveChanges();
             }
-
-            return true;
+            _plantillaVO = this.plantillaUtility.convertEntity2VO(_plantilla);
+            return _plantillaVO;
         }
     }
 }

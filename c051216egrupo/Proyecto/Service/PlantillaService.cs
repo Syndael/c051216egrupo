@@ -28,7 +28,7 @@ namespace GestorPlantilla.Service
             return this.plantillaRepository.Get(_id);
         }
 
-        public Boolean post(PlantillaVO _plantillaVO)
+        public PlantillaVO post(PlantillaVO _plantillaVO)
         {
             return this.plantillaRepository.Post(_plantillaVO);
         }
@@ -38,7 +38,7 @@ namespace GestorPlantilla.Service
             return this.plantillaRepository.Delete(_id);
         }
 
-        public Boolean put(PlantillaVO _plantillaVO)
+        public PlantillaVO put(PlantillaVO _plantillaVO)
         {
             return this.plantillaRepository.Put(_plantillaVO);
         }

@@ -1,15 +1,15 @@
 <h2>Listado de Plantillas</h2>
+<div>
+    <button (click)="gotoCrear()">
+        A&#241;adir Plantilla
+    </button>
+</div>
 <ul class="plantillas">
   <li *ngFor="let plantilla of plantillas; let indice = index"
       [class.selected]="plantilla === selectedPlantilla" (click)="gotoDetail(plantilla)">
-    <span class="badge">{{indice}}</span>
+    <span class="badge">{{indice+1}}</span>
     <span>{{plantilla.nombre}}</span>
     <button class="delete"
       (click)="delete(plantilla); $event.stopPropagation()">x</button>
   </li>
 </ul>
-<div>
-    <button (click)="gotoCrear()">
-        Añadir
-    </button>
-</div>

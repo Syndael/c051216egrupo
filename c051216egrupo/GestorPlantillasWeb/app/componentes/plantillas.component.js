@@ -40,16 +40,16 @@ var PlantillasComponent = (function () {
         this.selectedPlantilla = plantilla;
     };
     PlantillasComponent.prototype.gotoDetail = function (plantillaArg) {
-        this.router.navigate(['/detail', plantillaArg.id_plantilla]);
+        this.router.navigate(['/plantilla', plantillaArg.id_plantilla]);
     };
     PlantillasComponent.prototype.gotoCrear = function () {
-        this.router.navigate(['/detail']);
+        this.router.navigate(['/new']);
     };
     PlantillasComponent = __decorate([
         core_1.Component({
             selector: 'mis-plantillas',
             templateUrl: 'app/html/plantillas.component.html',
-            styleUrls: ['app/css/plantillas.component.css']
+            styleUrls: ['app/css/css.component.css']
         }), 
         __metadata('design:paramtypes', [plantilla_service_1.PlantillaService, router_1.Router])
     ], PlantillasComponent);

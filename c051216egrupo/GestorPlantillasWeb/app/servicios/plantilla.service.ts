@@ -15,7 +15,7 @@ export class PlantillaService {
     constructor(private http: Http) { }
 
     getPlantillas(): Promise<Plantilla[]> {
-        return this.http.get(this.plantillasUrl, { headers: this.headers })
+        return this.http.get(this.plantillasUrl, { headers: this.headersAccept })
             .toPromise()
             .then(response => response.json() as Plantilla[])
             .catch(this.handleError);
@@ -34,9 +34,13 @@ export class PlantillaService {
             .catch(this.handleError);
     }
 
-    create(name: string): Promise<Plantilla> {
+    create(plantilla: Plantilla): Promise<Plantilla> {
         return this.http
-            .post(this.plantillasUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.plantillasUrl, JSON.stringify({
+                nombre: plantilla.nombre,
+                descripcion: plantilla.descripcion,
+                owner: plantilla.owner
+            }), { headers: this.headers })
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);

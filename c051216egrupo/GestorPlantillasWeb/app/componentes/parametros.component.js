@@ -57,8 +57,8 @@ var ParametrosComponent = (function () {
     ParametrosComponent = __decorate([
         core_1.Component({
             selector: 'mis-parametros',
-            templateUrl: 'app/html/parametro.component.html',
-            styleUrls: ['app/css/parametro.component.css']
+            templateUrl: 'app/html/parametros.component.html',
+            styleUrls: ['app/css/css.component.css']
         }), 
         __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.Router])
     ], ParametrosComponent);

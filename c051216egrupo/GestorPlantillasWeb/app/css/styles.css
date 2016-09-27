@@ -30,7 +30,6 @@ body, input[text], button {
 
 a {
     cursor: pointer;
-    cursor: hand;
 }
 
 button {
@@ -40,11 +39,10 @@ button {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
-    cursor: hand;
 }
 
     button:hover {
-        background-color: #cfd8dc;
+        background-color: #cfdcd8;
     }
 
     button:disabled {
@@ -64,16 +62,16 @@ nav a {
 }
 
     nav a:visited, a:link {
-        color: #607D8B;
+        color: #608B7D;
     }
 
     nav a:hover {
-        color: #039be5;
-        background-color: #CFD8DC;
+        color: #03e59b;
+        background-color: #CFDCD8;
     }
 
     nav a.router-link-active {
-        color: #039be5;
+        color: #03e59b;
     }
 
 /* items class */
@@ -96,13 +94,13 @@ nav a {
     }
 
         .items li:hover {
-            color: #607D8B;
+            color: #608B7D;
             background-color: #DDD;
             left: .1em;
         }
 
         .items li.selected:hover {
-            background-color: #BBD8DC;
+            background-color: #BBDCD8;
             color: white;
         }
 
@@ -130,18 +128,18 @@ nav a {
     }
 
         .items li:hover {
-            color: #607D8B;
+            color: #608B7D;
             background-color: #DDD;
             left: .1em;
         }
 
         .items li.selected {
-            background-color: #CFD8DC;
+            background-color: #CFDCD8;
             color: white;
         }
 
             .items li.selected:hover {
-                background-color: #BBD8DC;
+                background-color: #BBDCD8;
             }
 
     .items .text {
@@ -154,7 +152,7 @@ nav a {
         font-size: small;
         color: white;
         padding: 0.8em 0.7em 0 0.7em;
-        background-color: #607D8B;
+        background-color: #608B7D;
         line-height: 1em;
         position: relative;
         left: -1px;

@@ -6,8 +6,8 @@ import { ParametroService }         from './../servicios/parametro.service';
 
 @Component({
     selector: 'mis-parametros',
-    templateUrl: 'app/html/parametro.component.html',
-    styleUrls: ['app/css/parametro.component.css']
+    templateUrl: 'app/html/parametros.component.html',
+    styleUrls: ['app/css/css.component.css']
 })
 export class ParametrosComponent implements OnInit {
     parametros: Parametro[];

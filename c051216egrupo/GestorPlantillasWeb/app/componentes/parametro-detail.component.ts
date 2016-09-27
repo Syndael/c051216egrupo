@@ -7,7 +7,7 @@ import { ParametroService } from './../servicios/parametro.service';
 @Component({
     selector: 'detalle-parametro',
     templateUrl: 'app/html/parametro-detail.component.html',
-    styleUrls: ['app/css/parametro-detail.component.css']
+    styleUrls: ['app/css/css-detail.component.css']
 })
 export class ParametroDetailComponent implements OnInit {
     parametro: Parametro;
