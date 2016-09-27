@@ -13,10 +13,10 @@ namespace GestorPlantillas.EntityVO
         public Plantilla Plantilla { get; set; }
         public int tipoID { get; set; }
         public Tipo Tipo{get; set;}
-        public int parametro { get; set; }
+        public String parametro { get; set; }
         public bool isText { get; set; }
 
-        public ParametroVO(int _plantillaID, int _tipoID, int _parametro)
+        public ParametroVO(int _plantillaID, int _tipoID, String _parametro)
         {
             this.plantillaID = _plantillaID;
             this.tipoID = _tipoID;

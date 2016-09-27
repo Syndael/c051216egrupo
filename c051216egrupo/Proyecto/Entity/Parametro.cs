@@ -11,7 +11,7 @@ namespace GestorPlantillas.Entity
         public int id { get; set; }
         public int plantillaID { get; set; }
         public int tipoID { get; set; }
-        public int parametro { get; set; }
+        public String parametro { get; set; }
         public bool isText{ get; set; }
 
         [ForeignKey("plantillaID")]
@@ -19,7 +19,7 @@ namespace GestorPlantillas.Entity
         [ForeignKey("tipoID")]
         public virtual Tipo Tipo { get; set; }
 
-        public Parametro(int _plantillaID, int _tipoID, int _parametro)
+        public Parametro(int _plantillaID, int _tipoID, String _parametro)
         {
             this.plantillaID = _plantillaID;
             this.tipoID = _tipoID;
