@@ -235,10 +235,10 @@
     <Content Include="app\css\app.component.css" />
     <Content Include="app\css\styles.css" />
     <Content Include="app\imgs\cargando.gif" />
-    <Content Include="app\parametro-detail.component.css" />
-    <Content Include="app\parametro-detail.component.html" />
-    <Content Include="app\parametros.component.css" />
-    <Content Include="app\parametros.component.html" />
+    <Content Include="app\css\parametro-detail.component.css" />
+    <Content Include="app\html\parametro-detail.component.html" />
+    <Content Include="app\css\parametros.component.css" />
+    <Content Include="app\html\parametros.component.html" />
     <Content Include="app\css\plantilla-detail.component.css" />
     <Content Include="app\html\plantilla-detail.component.html" />
     <Content Include="app\css\plantillas.component.css" />
@@ -254,9 +254,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
-    <TypeScriptCompile Include="app\parametro-detail.component.ts" />
-    <TypeScriptCompile Include="app\parametro.service.ts" />
-    <TypeScriptCompile Include="app\parametros.component.ts" />
+    <TypeScriptCompile Include="app\componentes\parametro-detail.component.ts" />
+    <TypeScriptCompile Include="app\servicios\parametro.service.ts" />
+    <TypeScriptCompile Include="app\componentes\parametros.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantilla-detail.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantillas.component.ts" />
     <TypeScriptCompile Include="app\servicios\plantilla.service.ts" />

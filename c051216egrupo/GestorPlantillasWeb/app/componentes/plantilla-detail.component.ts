@@ -7,7 +7,7 @@ import { PlantillaService } from './../servicios/plantilla.service';
 @Component({
   selector: 'detalle-plantilla',
   templateUrl: 'app/html/plantilla-detail.component.html',
-  styleUrls: ['app/css/plantila-detail.component.css']
+  styleUrls: ['app/css/plantilla-detail.component.css']
 })
 export class PlantillaDetailComponent implements OnInit {
   plantilla: Plantilla;

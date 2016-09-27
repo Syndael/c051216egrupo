@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { Parametro }                from './modelos/parametro';
-import { ParametroService }         from './parametro.service';
+import { Parametro }                from './../modelos/parametro';
+import { ParametroService }         from './../servicios/parametro.service';
 
 @Component({
     selector: 'mis-parametros',
-    templateUrl: 'app/parametro.component.html',
-    styleUrls: ['app/parametro.component.css']
+    templateUrl: 'app/html/parametro.component.html',
+    styleUrls: ['app/css/parametro.component.css']
 })
 export class ParametrosComponent implements OnInit {
     parametros: Parametro[];
