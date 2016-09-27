@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Parametro }        from './modelos/parametro';
-import { ParametroService } from './parametro.service';
+import { Parametro }        from './../modelos/parametro';
+import { ParametroService } from './../servicios/parametro.service';
 
 @Component({
     selector: 'detalle-parametro',
-    templateUrl: 'app/parametro-detail.component.html',
-    styleUrls: ['app/parametro-detail.component.css']
+    templateUrl: 'app/html/parametro-detail.component.html',
+    styleUrls: ['app/css/parametro-detail.component.css']
 })
 export class ParametroDetailComponent implements OnInit {
     parametro: Parametro;

@@ -9,14 +9,15 @@ import { Plantilla } from './../modelos/plantilla';
 export class PlantillaService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
+    private headersAccept = new Headers({ 'Accept': 'application/json' });
     private plantillasUrl = 'api/plantilla';  // URL to web api
 
     constructor(private http: Http) { }
 
     getPlantillas(): Promise<Plantilla[]> {
-        return this.http.get(this.plantillasUrl)
+        return this.http.get(this.plantillasUrl, { headers: this.headers })
             .toPromise()
-            .then(response => response.json().data as Plantilla[])
+            .then(response => response.json() as Plantilla[])
             .catch(this.handleError);
     }
 
@@ -37,7 +38,7 @@ export class PlantillaService {
         return this.http
             .post(this.plantillasUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
-            .then(res => res.json().data)
+            .then(res => res.json())
             .catch(this.handleError);
     }
 

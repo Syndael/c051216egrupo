@@ -11,54 +11,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var PlantillaService = (function () {
-    function PlantillaService(http) {
+var ParametroService = (function () {
+    function ParametroService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.headersAccept = new http_1.Headers({ 'Accept': 'application/json' });
-        this.plantillasUrl = 'api/plantilla'; // URL to web api
+        this.parametrosUrl = 'api/parametro'; // URL to web api
     }
-    PlantillaService.prototype.getPlantillas = function () {
-        return this.http.get(this.plantillasUrl, { headers: this.headers })
+    ParametroService.prototype.getParametros = function () {
+        return this.http.get(this.parametrosUrl)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    PlantillaService.prototype.getPlantilla = function (id) {
-        return this.getPlantillas()
-            .then(function (plantillas) { return plantillas.find(function (plantilla) { return plantilla.id_plantilla === id; }); });
+    ParametroService.prototype.getParametro = function (id) {
+        return this.getParametros()
+            .then(function (parametros) { return parametros.find(function (parametro) { return parametro.id_parametro === id; }); });
     };
-    PlantillaService.prototype.delete = function (id) {
-        var url = this.plantillasUrl + "/" + id;
+    ParametroService.prototype.delete = function (id) {
+        var url = this.parametrosUrl + "/" + id;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
             .then(function () { return null; })
             .catch(this.handleError);
     };
-    PlantillaService.prototype.create = function (name) {
+    ParametroService.prototype.create = function (name) {
         return this.http
-            .post(this.plantillasUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.parametrosUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json(); })
+            .then(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
-    PlantillaService.prototype.update = function (plantilla) {
-        var url = this.plantillasUrl + "/" + plantilla.id_plantilla;
+    ParametroService.prototype.update = function (parametro) {
+        var url = this.parametrosUrl + "/" + parametro.id_parametro;
         return this.http
-            .put(url, JSON.stringify(plantilla), { headers: this.headers })
+            .put(url, JSON.stringify(parametro), { headers: this.headers })
             .toPromise()
-            .then(function () { return plantilla; })
+            .then(function () { return parametro; })
             .catch(this.handleError);
     };
-    PlantillaService.prototype.handleError = function (error) {
+    ParametroService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    PlantillaService = __decorate([
+    ParametroService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], PlantillaService);
-    return PlantillaService;
+    ], ParametroService);
+    return ParametroService;
 }());
-exports.PlantillaService = PlantillaService;
-//# sourceMappingURL=plantilla.service.js.map
+exports.ParametroService = ParametroService;
+//# sourceMappingURL=parametro.service.js.map

@@ -9,12 +9,13 @@ import { Parametro } from './modelos/parametro';
 export class ParametroService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
+    private headersAccept = new Headers({ 'Accept': 'application/json' });
     private parametrosUrl = 'api/parametro';  // URL to web api
 
     constructor(private http: Http) { }
 
     getParametros(): Promise<Parametro[]> {
-        return this.http.get(this.parametrosUrl)
+        return this.http.get(this.parametrosUrl, { headers: this.headersAccept })
             .toPromise()
             .then(response => response.json() as Parametro[])
             .catch(this.handleError);
@@ -37,7 +38,7 @@ export class ParametroService {
         return this.http
             .post(this.parametrosUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
-            .then(res => res.json().data)
+            .then(res => res.json())
             .catch(this.handleError);
     }
 

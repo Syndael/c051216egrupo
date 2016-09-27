@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var parametro_service_1 = require('./parametro.service');
+var parametro_service_1 = require('./../servicios/parametro.service');
 var ParametrosComponent = (function () {
     function ParametrosComponent(parametroService, router) {
         this.parametroService = parametroService;
@@ -57,8 +57,8 @@ var ParametrosComponent = (function () {
     ParametrosComponent = __decorate([
         core_1.Component({
             selector: 'mis-parametros',
-            templateUrl: 'app/parametro.component.html',
-            styleUrls: ['app/parametro.component.css']
+            templateUrl: 'app/html/parametro.component.html',
+            styleUrls: ['app/css/parametro.component.css']
         }), 
         __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.Router])
     ], ParametrosComponent);

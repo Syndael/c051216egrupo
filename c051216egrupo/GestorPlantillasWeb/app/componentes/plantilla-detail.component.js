@@ -35,7 +35,7 @@ var PlantillaDetailComponent = (function () {
         core_1.Component({
             selector: 'detalle-plantilla',
             templateUrl: 'app/html/plantilla-detail.component.html',
-            styleUrls: ['app/css/plantila-detail.component.css']
+            styleUrls: ['app/css/plantilla-detail.component.css']
         }), 
         __metadata('design:paramtypes', [plantilla_service_1.PlantillaService, router_1.ActivatedRoute])
     ], PlantillaDetailComponent);
