@@ -1,8 +1,8 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PlantillasComponent }  from './plantillas.component';
-import { PlantillaDetailComponent }     from './plantilla-detail.component';
+import { PlantillasComponent }  from './componentes/plantillas.component';
+import { PlantillaDetailComponent }     from './componentes/plantilla-detail.component';
 
 const appRoutes: Routes = [
     {

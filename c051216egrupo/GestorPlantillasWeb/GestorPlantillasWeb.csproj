@@ -255,6 +255,7 @@
     </Content>
     <Content Include="package.json" />
     <TypeScriptCompile Include="app\parametro-detail.component.ts" />
+    <TypeScriptCompile Include="app\parametro.service.ts" />
     <TypeScriptCompile Include="app\parametros.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantilla-detail.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantillas.component.ts" />

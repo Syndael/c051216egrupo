@@ -3,50 +3,50 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Plantilla } from './../modelos/plantilla';
+import { Parametro } from './modelos/parametro';
 
 @Injectable()
-export class PlantillaService {
+export class ParametroService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    private plantillasUrl = 'api/plantilla';  // URL to web api
+    private parametrosUrl = 'api/parametro';  // URL to web api
 
     constructor(private http: Http) { }
 
-    getPlantillas(): Promise<Plantilla[]> {
-        return this.http.get(this.plantillasUrl)
+    getParametros(): Promise<Parametro[]> {
+        return this.http.get(this.parametrosUrl)
             .toPromise()
-            .then(response => response.json().data as Plantilla[])
+            .then(response => response.json() as Parametro[])
             .catch(this.handleError);
     }
 
-    getPlantilla(id: number): Promise<Plantilla> {
-        return this.getPlantillas()
-            .then(plantillas => plantillas.find(plantilla => plantilla.id_plantilla === id));
+    getParametro(id: number): Promise<Parametro> {
+        return this.getParametros()
+            .then(parametros => parametros.find(parametro => parametro.id_parametro === id));
     }
 
     delete(id: number): Promise<void> {
-        let url = `${this.plantillasUrl}/${id}`;
+        let url = `${this.parametrosUrl}/${id}`;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
             .then(() => null)
             .catch(this.handleError);
     }
 
-    create(name: string): Promise<Plantilla> {
+    create(name: string): Promise<Parametro> {
         return this.http
-            .post(this.plantillasUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.parametrosUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError);
     }
 
-    update(plantilla: Plantilla): Promise<Plantilla> {
-        const url = `${this.plantillasUrl}/${plantilla.id_plantilla}`;
+    update(parametro: Parametro): Promise<Parametro> {
+        const url = `${this.parametrosUrl}/${parametro.id_parametro}`;
         return this.http
-            .put(url, JSON.stringify(plantilla), { headers: this.headers })
+            .put(url, JSON.stringify(parametro), { headers: this.headers })
             .toPromise()
-            .then(() => plantilla)
+            .then(() => parametro)
             .catch(this.handleError);
     }
 

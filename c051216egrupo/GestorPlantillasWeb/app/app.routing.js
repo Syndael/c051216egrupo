@@ -1,7 +1,7 @@
 "use strict";
 var router_1 = require('@angular/router');
-var plantillas_component_1 = require('./plantillas.component');
-var plantilla_detail_component_1 = require('./plantilla-detail.component');
+var plantillas_component_1 = require('./componentes/plantillas.component');
+var plantilla_detail_component_1 = require('./componentes/plantilla-detail.component');
 var appRoutes = [
     {
         path: '',

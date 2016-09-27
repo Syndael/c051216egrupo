@@ -14,9 +14,9 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var plantillas_component_1 = require('./plantillas.component');
-var plantilla_detail_component_1 = require('./plantilla-detail.component');
-var plantilla_service_1 = require('./plantilla.service');
+var plantillas_component_1 = require('./componentes/plantillas.component');
+var plantilla_detail_component_1 = require('./componentes/plantilla-detail.component');
+var plantilla_service_1 = require('./servicios/plantilla.service');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {

@@ -6,9 +6,9 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 import { AppComponent }         from './app.component';
-import { PlantillasComponent }   from './plantillas.component';
-import { PlantillaDetailComponent }  from './plantilla-detail.component';
-import { PlantillaService }          from './plantilla.service';
+import { PlantillasComponent }   from './componentes/plantillas.component';
+import { PlantillaDetailComponent }  from './componentes/plantilla-detail.component';
+import { PlantillaService }          from './servicios/plantilla.service';
 import { routing }              from './app.routing';
 
 @NgModule({

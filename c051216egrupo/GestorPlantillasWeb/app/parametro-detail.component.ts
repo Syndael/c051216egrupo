@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Plantilla }        from './modelos/plantilla';
-import { PlantillaService } from './plantilla.service';
+import { Parametro }        from './modelos/parametro';
+import { ParametroService } from './parametro.service';
 
 @Component({
-  selector: 'detalle-plantilla',
-  templateUrl: 'app/plantilla-detail.component.html',
-  styleUrls: ['app/plantila-detail.component.css']
+    selector: 'detalle-parametro',
+    templateUrl: 'app/parametro-detail.component.html',
+    styleUrls: ['app/parametro-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
-  plantilla: Plantilla;
+export class ParametroDetailComponent implements OnInit {
+    parametro: Parametro;
 
   constructor(
-      private plantillaService: PlantillaService,
+      private parametroService: ParametroService,
     private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.plantillaService.getPlantilla(id)
-        .then(plantilla => this.plantilla = plantilla);
+      this.parametroService.getParametro(id)
+          .then(parametro => this.parametro = parametro);
     });
   }
 
   save(): void {
-      this.plantillaService.update(this.plantilla)
+      this.parametroService.update(this.parametro)
       .then(this.goBack);
   }
 
