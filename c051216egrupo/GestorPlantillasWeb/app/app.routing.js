@@ -1,31 +1,21 @@
 "use strict";
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard.component');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
+var plantillas_component_1 = require('./plantillas.component');
+var plantilla_detail_component_1 = require('./plantilla-detail.component');
 var appRoutes = [
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/plantillas',
         pathMatch: 'full'
     },
     {
-        path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        path: 'plantillas',
+        component: plantillas_component_1.PlantillasComponent
     },
     {
-        path: 'detail/:id',
-        component: hero_detail_component_1.HeroDetailComponent
-    },
-    {
-        path: 'heroes',
-        component: heroes_component_1.HeroesComponent
+        path: 'plantilla/:id',
+        component: plantilla_detail_component_1.PlantillaDetailComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/ 
 //# sourceMappingURL=app.routing.js.map

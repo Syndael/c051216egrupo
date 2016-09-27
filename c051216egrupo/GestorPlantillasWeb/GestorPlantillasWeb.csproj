@@ -217,19 +217,13 @@
     <Compile Include="Results\ChallengeResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.css" />
+    <Content Include="app\css\app.component.css" />
     <Content Include="app\css\styles.css" />
-    <Content Include="app\dashboard.component.css" />
-    <Content Include="app\dashboard.component.html" />
     <Content Include="app\imgs\cargando.gif" />
     <Content Include="app\plantilla-detail.component.css" />
     <Content Include="app\plantilla-detail.component.html" />
-    <Content Include="app\hero-detail.component.css" />
-    <Content Include="app\hero-detail.component.html" />
     <Content Include="app\plantillas.component.css" />
     <Content Include="app\plantillas.component.html" />
-    <Content Include="app\heroes.component.css" />
-    <Content Include="app\heroes.component.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -287,11 +281,6 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.ts" />
-    <TypeScriptCompile Include="app\dashboard.component.ts" />
-    <TypeScriptCompile Include="app\hero-detail.component.ts" />
-    <TypeScriptCompile Include="app\hero.service.ts" />
-    <TypeScriptCompile Include="app\hero.ts" />
-    <TypeScriptCompile Include="app\heroes.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\modelos\parametro.ts" />
     <TypeScriptCompile Include="app\modelos\plantilla.ts" />
