@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Plantilla }        from './hero';
+import { Hero }        from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { HeroService } from './hero.service';
   styleUrls: ['app/hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Plantilla;
+  hero: Hero;
 
   constructor(
     private heroService: HeroService,
