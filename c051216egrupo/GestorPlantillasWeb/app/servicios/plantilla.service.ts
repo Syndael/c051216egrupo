@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Plantilla } from './modelos/plantilla';
+import { Plantilla } from './../modelos/plantilla';
 
 @Injectable()
 export class PlantillaService {

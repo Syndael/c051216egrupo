@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { Plantilla }                from './modelos/plantilla';
-import { PlantillaService }         from './plantilla.service';
+import { Plantilla }                from './../modelos/plantilla';
+import { PlantillaService }         from './../servicios/plantilla.service';
 
 @Component({
   selector: 'mis-plantillas',
-  templateUrl: 'app/plantillas.component.html',
-  styleUrls: ['app/plantillas.component.css']
+  templateUrl: 'app/html/plantillas.component.html',
+  styleUrls: ['app/css/plantillas.component.css']
 })
 export class PlantillasComponent implements OnInit {
   plantillas: Plantilla[];

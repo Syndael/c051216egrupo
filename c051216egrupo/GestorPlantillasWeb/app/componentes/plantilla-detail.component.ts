@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Plantilla }        from './modelos/plantilla';
-import { PlantillaService } from './plantilla.service';
+import { Plantilla }        from './../modelos/plantilla';
+import { PlantillaService } from './../servicios/plantilla.service';
 
 @Component({
   selector: 'detalle-plantilla',
-  templateUrl: 'app/plantilla-detail.component.html',
-  styleUrls: ['app/plantila-detail.component.css']
+  templateUrl: 'app/html/plantilla-detail.component.html',
+  styleUrls: ['app/css/plantila-detail.component.css']
 })
 export class PlantillaDetailComponent implements OnInit {
   plantilla: Plantilla;
