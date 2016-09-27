@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,7 +51,36 @@
   <ItemGroup>
     <Compile Include="Class1 - Copy.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DB\PlantillasDB.cs" />
+    <Compile Include="EntityVO\ParametroVO.cs" />
+    <Compile Include="EntityVO\TipoVO.cs" />
+    <Compile Include="EntityVO\PlantillaVO.cs" />
+    <Compile Include="Entity\Plantilla.cs" />
+    <Compile Include="Entity\Tipo.cs" />
+    <Compile Include="Entity\Parametro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IParametroRepository.cs" />
+    <Compile Include="Repository\IPlantillaRepository.cs" />
+    <Compile Include="Repository\ITipoRepository.cs" />
+    <Compile Include="Repository\TipoRepository.cs" />
+    <Compile Include="Repository\PlantillaRepository.cs" />
+    <Compile Include="Repository\ParametroRepository.cs" />
+    <Compile Include="Service\IParametroService.cs" />
+    <Compile Include="Service\IPlantillaService.cs" />
+    <Compile Include="Service\ITipoService.cs" />
+    <Compile Include="Service\ParametroService.cs" />
+    <Compile Include="Service\PlantillaService.cs" />
+    <Compile Include="Service\TipoService.cs" />
+    <Compile Include="Utility\IParametroUtility.cs" />
+    <Compile Include="Utility\IPlantillaUtility.cs" />
+    <Compile Include="Utility\ITipoUtility.cs" />
+    <Compile Include="Utility\TipoUtility.cs" />
+    <Compile Include="Utility\ParametroUtility.cs" />
+    <Compile Include="Utility\PlantillaUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
