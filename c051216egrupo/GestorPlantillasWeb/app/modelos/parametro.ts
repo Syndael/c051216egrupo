@@ -8,4 +8,5 @@ export class Parametro {
     parametro: string;
     plantilla: Plantilla;
     tipo: Tipo;
+    isText: boolean;
 }
