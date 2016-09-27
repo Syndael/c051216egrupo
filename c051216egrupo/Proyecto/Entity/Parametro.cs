@@ -8,7 +8,7 @@ namespace GestorPlantillas.Entity
 {
     public class Parametro
     {
-        public int id_parametro { get; set; }
+        public int id { get; set; }
         public int plantillaID { get; set; }
         public int tipoID { get; set; }
         public int parametro { get; set; }

@@ -14,7 +14,7 @@ namespace GestorPlantillas.Utility
         {
             var _tipoVO = new TipoVO();
 
-            _tipoVO.id_tipo = _tipo.id_tipo;
+            _tipoVO.id_tipo = _tipo.id;
             _tipoVO.tipo = _tipo.tipo;
 
             return _tipoVO;
@@ -25,7 +25,7 @@ namespace GestorPlantillas.Utility
         {
             var _tipo = new Tipo();
 
-            _tipo.id_tipo = _tipoVO.id_tipo;
+            _tipo.id = _tipoVO.id_tipo;
             _tipo.tipo = _tipoVO.tipo;
 
             return _tipo;

@@ -14,7 +14,7 @@ namespace GestorPlantillas.Utility
         {
             var _parametroVO = new ParametroVO();
 
-            _parametroVO.id_parametro = _parametro.id_parametro;
+            _parametroVO.id_parametro = _parametro.id;
             _parametroVO.plantillaID = _parametro.plantillaID;
             _parametroVO.tipoID = _parametro.tipoID;
             _parametroVO.parametro = _parametro.parametro;
@@ -28,7 +28,7 @@ namespace GestorPlantillas.Utility
         {
             var _parametro = new Parametro();
 
-            _parametro.id_parametro = _parametroVO.id_parametro;
+            _parametro.id = _parametroVO.id_parametro;
             _parametro.plantillaID = _parametroVO.plantillaID;
             _parametro.tipoID = _parametroVO.tipoID;
             _parametro.parametro = _parametroVO.parametro;

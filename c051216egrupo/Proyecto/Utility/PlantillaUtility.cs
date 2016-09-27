@@ -14,7 +14,7 @@ namespace GestorPlantillas.Utility
         {
             var _plantillaVO = new PlantillaVO();
 
-            _plantillaVO.id_plantilla = _plantilla.id_plantilla;
+            _plantillaVO.id_plantilla = _plantilla.id;
             _plantillaVO.nombre = _plantilla.nombre;
             _plantillaVO.descripcion = _plantilla.descripcion;
             _plantillaVO.owner = _plantilla.owner;            
@@ -27,7 +27,7 @@ namespace GestorPlantillas.Utility
         {
             var _plantilla = new Plantilla();
 
-            _plantilla.id_plantilla = _plantillaVO.id_plantilla;
+            _plantilla.id = _plantillaVO.id_plantilla;
             _plantilla.nombre = _plantillaVO.nombre;
             _plantilla.descripcion = _plantillaVO.descripcion;
             _plantilla.owner = _plantillaVO.owner;

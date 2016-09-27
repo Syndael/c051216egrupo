@@ -7,7 +7,7 @@ namespace GestorPlantillas.Entity
 {
     public class Tipo
     {
-        public int id_tipo { get; set; }
+        public int id { get; set; }
         public String tipo { get; set; }
     }
 }
