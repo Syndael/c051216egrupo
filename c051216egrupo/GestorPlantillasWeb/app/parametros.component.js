@@ -60,10 +60,9 @@ var ParametrosComponent = (function () {
             templateUrl: 'app/parametro.component.html',
             styleUrls: ['app/parametro.component.css']
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof parametro_service_1.ParametroService !== 'undefined' && parametro_service_1.ParametroService) === 'function' && _a) || Object, router_1.Router])
+        __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.Router])
     ], ParametrosComponent);
     return ParametrosComponent;
-    var _a;
 }());
 exports.ParametrosComponent = ParametrosComponent;
 //# sourceMappingURL=parametros.component.js.map

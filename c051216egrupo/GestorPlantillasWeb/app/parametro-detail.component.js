@@ -10,37 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var plantilla_service_1 = require('./plantilla.service');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(plantillaService, route) {
-        this.plantillaService = plantillaService;
+var parametro_service_1 = require('./parametro.service');
+var ParametroDetailComponent = (function () {
+    function ParametroDetailComponent(parametroService, route) {
+        this.parametroService = parametroService;
         this.route = route;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    ParametroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
-            _this.plantillaService.getPlantilla(id)
-                .then(function (plantilla) { return _this.plantilla = plantilla; });
+            _this.parametroService.getParametro(id)
+                .then(function (parametro) { return _this.parametro = parametro; });
         });
     };
-    HeroDetailComponent.prototype.save = function () {
-        this.plantillaService.update(this.plantilla)
+    ParametroDetailComponent.prototype.save = function () {
+        this.parametroService.update(this.parametro)
             .then(this.goBack);
     };
-    HeroDetailComponent.prototype.goBack = function () {
+    ParametroDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
-    HeroDetailComponent = __decorate([
+    ParametroDetailComponent = __decorate([
         core_1.Component({
-            selector: 'detalle-plantilla',
-            templateUrl: 'app/plantilla-detail.component.html',
-            styleUrls: ['app/plantila-detail.component.css']
+            selector: 'detalle-parametro',
+            templateUrl: 'app/parametro-detail.component.html',
+            styleUrls: ['app/parametro-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof plantilla_service_1.PlantillaService !== 'undefined' && plantilla_service_1.PlantillaService) === 'function' && _a) || Object, router_1.ActivatedRoute])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
-    var _a;
+        __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.ActivatedRoute])
+    ], ParametroDetailComponent);
+    return ParametroDetailComponent;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
+exports.ParametroDetailComponent = ParametroDetailComponent;
 //# sourceMappingURL=parametro-detail.component.js.map
