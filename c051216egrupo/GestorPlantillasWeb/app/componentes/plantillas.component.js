@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var plantilla_service_1 = require('./plantilla.service');
+var plantilla_service_1 = require('./../servicios/plantilla.service');
 var PlantillasComponent = (function () {
     function PlantillasComponent(plantillaService, router) {
         this.plantillaService = plantillaService;
@@ -37,7 +37,7 @@ var PlantillasComponent = (function () {
     PlantillasComponent.prototype.delete = function (plantilla) {
         var _this = this;
         this.plantillaService
-            .delete(plantilla.id)
+            .delete(plantilla.id_plantilla)
             .then(function () {
             _this.plantillas = _this.plantillas.filter(function (p) { return p !== plantilla; });
             if (_this.selectedPlantilla === plantilla) {
@@ -52,18 +52,17 @@ var PlantillasComponent = (function () {
         this.selectedPlantilla = plantilla;
     };
     PlantillasComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedPlantilla.id]);
+        this.router.navigate(['/detail', this.selectedPlantilla.id_plantilla]);
     };
     PlantillasComponent = __decorate([
         core_1.Component({
             selector: 'mis-plantillas',
-            templateUrl: 'app/plantillas.component.html',
-            styleUrls: ['app/plantillas.component.css']
+            templateUrl: 'app/html/plantillas.component.html',
+            styleUrls: ['app/css/plantillas.component.css']
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof plantilla_service_1.PlantillaService !== 'undefined' && plantilla_service_1.PlantillaService) === 'function' && _a) || Object, router_1.Router])
+        __metadata('design:paramtypes', [plantilla_service_1.PlantillaService, router_1.Router])
     ], PlantillasComponent);
     return PlantillasComponent;
-    var _a;
 }());
 exports.PlantillasComponent = PlantillasComponent;
 //# sourceMappingURL=plantillas.component.js.map
