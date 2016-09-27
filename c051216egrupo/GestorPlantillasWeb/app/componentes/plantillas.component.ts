@@ -23,16 +23,6 @@ export class PlantillasComponent implements OnInit {
           .then(plantillas => this.plantillas = plantillas);
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.plantillaService.create(name)
-      .then(plantilla => {
-          this.plantillas.push(plantilla);
-        this.selectedPlantilla = null;
-      });
-  }
-
   delete(plantilla: Plantilla): void {
       this.plantillaService
         .delete(plantilla.id_plantilla)
@@ -50,8 +40,12 @@ export class PlantillasComponent implements OnInit {
     this.selectedPlantilla = plantilla;
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedPlantilla.id_plantilla]);
+  gotoDetail(plantillaArg: Plantilla): void {
+      this.router.navigate(['/detail', plantillaArg.id_plantilla]);
+  }
+
+  gotoCrear(): void {
+      this.router.navigate(['/detail']);
   }
 }
 

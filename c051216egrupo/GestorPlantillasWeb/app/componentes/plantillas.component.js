@@ -22,18 +22,6 @@ var PlantillasComponent = (function () {
             .getPlantillas()
             .then(function (plantillas) { return _this.plantillas = plantillas; });
     };
-    PlantillasComponent.prototype.add = function (name) {
-        var _this = this;
-        name = name.trim();
-        if (!name) {
-            return;
-        }
-        this.plantillaService.create(name)
-            .then(function (plantilla) {
-            _this.plantillas.push(plantilla);
-            _this.selectedPlantilla = null;
-        });
-    };
     PlantillasComponent.prototype.delete = function (plantilla) {
         var _this = this;
         this.plantillaService
@@ -51,8 +39,11 @@ var PlantillasComponent = (function () {
     PlantillasComponent.prototype.onSelect = function (plantilla) {
         this.selectedPlantilla = plantilla;
     };
-    PlantillasComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedPlantilla.id_plantilla]);
+    PlantillasComponent.prototype.gotoDetail = function (plantillaArg) {
+        this.router.navigate(['/detail', plantillaArg.id_plantilla]);
+    };
+    PlantillasComponent.prototype.gotoCrear = function () {
+        this.router.navigate(['/detail']);
     };
     PlantillasComponent = __decorate([
         core_1.Component({
