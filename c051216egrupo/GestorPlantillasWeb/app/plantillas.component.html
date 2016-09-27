@@ -1,0 +1,22 @@
+<h2>Mis plantillas</h2>
+<div>
+  <label>Plantilla :</label> <input #plantillaName />
+  <button (click)="add(plantillaName.value); plantillaName.value=''">
+    Add
+  </button>
+</div>
+<ul class="plantillas">
+  <li *ngFor="let plantilla of plantillas" (click)="onSelect(plantilla)"
+      [class.selected]="plantilla === selectedPlantilla">
+    <span class="badge">{{plantilla.id}}</span>
+    <span>{{plantilla.name}}</span>
+    <button class="delete"
+      (click)="delete(plantilla); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedPlantilla">
+  <h2>
+    {{selectedPlantilla.name | uppercase}} seleccionada
+  </h2>
+  <button (click)="gotoDetail()">Detalle</button>
+</div>

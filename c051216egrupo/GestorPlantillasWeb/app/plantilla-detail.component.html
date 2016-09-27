@@ -1,0 +1,13 @@
+<div *ngIf="plantilla">
+  <h2>Detalle de la plantilla: {{plantilla.nombre}}</h2>
+  
+    <label>Nombre: </label>
+    <input [(ngModel)]="plantilla.nombre" placeholder="nombre" />
+    <label>Descripción: </label>
+    <input [(ngModel)]="plantilla.descripcion" placeholder="descripcion" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
+
+
