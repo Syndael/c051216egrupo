@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using GestorPlantillas.EntityVO;
 
-namespace AlquilerVehiculosApp.Service
+namespace GestorPlantillas.Service
 {
     public interface IParametroService
     {

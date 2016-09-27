@@ -49,8 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1 - Copy.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DB\PlantillasDB.cs" />
     <Compile Include="EntityVO\ParametroVO.cs" />
     <Compile Include="EntityVO\TipoVO.cs" />
