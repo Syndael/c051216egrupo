@@ -26,10 +26,7 @@ namespace GestorPlantillasWeb.Controllers
         // GET api/values
         public ICollection<PlantillaVO> Get()
         {
-            ICollection<PlantillaVO> parame = new List<PlantillaVO>();
-            parame.Add(new PlantillaVO { id_plantilla = 1, nombre = "Prueba" });
-            //return this.plantillaService.lista();
-            return parame;
+            return this.plantillaService.lista();
         }
 
         // GET api/values/5
