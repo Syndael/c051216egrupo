@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var plantilla_service_1 = require('./../servicios/plantilla.service');
+var plantilla_service_1 = require('./plantilla.service');
 var PlantillaDetailComponent = (function () {
     function PlantillaDetailComponent(plantillaService, route) {
         this.plantillaService = plantillaService;
@@ -34,12 +34,13 @@ var PlantillaDetailComponent = (function () {
     PlantillaDetailComponent = __decorate([
         core_1.Component({
             selector: 'detalle-plantilla',
-            templateUrl: 'app/html/plantilla-detail.component.html',
-            styleUrls: ['app/css/plantilla-detail.component.css']
+            templateUrl: 'app/plantilla-detail.component.html',
+            styleUrls: ['app/plantila-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [plantilla_service_1.PlantillaService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [(typeof (_a = typeof plantilla_service_1.PlantillaService !== 'undefined' && plantilla_service_1.PlantillaService) === 'function' && _a) || Object, router_1.ActivatedRoute])
     ], PlantillaDetailComponent);
     return PlantillaDetailComponent;
+    var _a;
 }());
 exports.PlantillaDetailComponent = PlantillaDetailComponent;
 //# sourceMappingURL=plantilla-detail.component.js.map

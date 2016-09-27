@@ -10,9 +10,6 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-*/app/*.js
-*/app/*.js.map
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -246,4 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-*.map
+*js.map
+*/app/**.js
+*/app/**.js.map
