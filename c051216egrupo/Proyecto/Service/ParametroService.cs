@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlquilerVehiculosApp.Service
+namespace GestorPlantillas.Service
 {
     public class ParametroService : IParametroService
     {

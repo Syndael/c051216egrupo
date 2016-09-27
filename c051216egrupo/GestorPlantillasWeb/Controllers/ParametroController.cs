@@ -2,6 +2,11 @@
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Web.Http;
+using GestorPlantillas;
+using GestorPlantillas.Service;
+using GestorPlantillas.Utility;
+using GestorPlantillas.Repository;
+using GestorPlantillas.EntityVO;
 
 namespace GestorPlantillasWeb.Controllers
 {

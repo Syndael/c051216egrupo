@@ -1,4 +1,8 @@
 ﻿
+using GestorPlantilla.Service;
+using GestorPlantillas.EntityVO;
+using GestorPlantillas.Repository;
+using GestorPlantillas.Utility;
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Web.Http;
