@@ -1,15 +1,31 @@
-<h2>Mis parametros</h2>
+<h2>Listado de parametros</h2>
 <ul class="parametros">
-    <li *ngFor="let parametro of parametros" (click)="onSelect(parametro)"
+    <li *ngFor="let parametro of parametros; let ind = index" (click)="onSelect(parametro)"
         [class.selected]="parametro === selectedParametro">
-        <span class="badge">{{parametro.idParametro}}</span>
-        <span>{{parametro.parametro}}</span>
+        <span class="badge">{{ind+1}}</span>
+
+        <span *ngIf="parametro.isText">
+            <img class="imgIco" src="../app/imgs/texico.png" />
+            <span class="paramTxt">
+                {{parametro.parametro | truncate : 20 : '...'}}
+            </span>
+        </span>
+        <span *ngIf="parametro.isText == false">
+            <img class="imgIco" src="../app/imgs/paramico.png" />
+            <span class="paramTxt">
+                {{parametro.parametro | truncate : 20 : '...'}}
+            </span>
+        </span>
+
         <button class="delete"
                 (click)="delete(parametro); $event.stopPropagation()">
             x
         </button>
     </li>
 </ul>
+
+<button class="crear" (click)="add(parametro)">A&#241;adir Parametro</button>
+
 <div *ngIf="selectedParametro">
     <detalle-parametro [parametro]="selectedParametro"></detalle-parametro>
 </div>

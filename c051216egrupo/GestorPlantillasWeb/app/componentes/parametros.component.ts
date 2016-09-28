@@ -4,6 +4,7 @@ import { Router }            from '@angular/router';
 import { Parametro }                from './../modelos/parametro';
 import { Plantilla }                from './../modelos/plantilla';
 import { ParametroService }         from './../servicios/parametro.service';
+import { TruncatePipe }         from './../utils/truncatepipe';
 
 @Component({
     selector: 'mis-parametros',
@@ -27,14 +28,11 @@ export class ParametrosComponent implements OnInit {
         }
     }
 
-    add(name: string): void {
-        name = name.trim();
-        if (!name) { return; }
-        this.parametroService.create(name)
-            .then(parametro => {
-                this.parametros.push(parametro);
-                this.selectedParametro = null;
-            });
+    add(): void {
+        let parAux = new Parametro();
+        parAux.plantillaId = this.plantilla.id_plantilla;
+        parAux.plantilla = this.plantilla;
+        this.selectedParametro = parAux;
     }
 
     delete(parametro: Parametro): void {

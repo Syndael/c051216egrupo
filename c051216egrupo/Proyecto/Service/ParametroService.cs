@@ -28,7 +28,7 @@ namespace GestorPlantillas.Service
             return this.parametroRepository.Get(_id);
         }
 
-        public Boolean post(ParametroVO _parametroVO)
+        public ParametroVO post(ParametroVO _parametroVO)
         {
             return this.parametroRepository.Post(_parametroVO);
         }
@@ -38,7 +38,7 @@ namespace GestorPlantillas.Service
             return this.parametroRepository.Delete(_id);
         }
 
-        public Boolean put(ParametroVO _parametroVO)
+        public ParametroVO put(ParametroVO _parametroVO)
         {
             return this.parametroRepository.Put(_parametroVO);
         }

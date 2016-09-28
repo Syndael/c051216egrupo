@@ -1,3 +1,7 @@
+#checkTexto{
+    height: .8em;
+}
+
 label {
     display: inline-block;
     width: 7em;
@@ -11,10 +15,14 @@ textarea {
     height: 6em;
 }
 
-input {
+input, select {
     height: 2em;
     font-size: 1em;
     padding-left: .4em;
+}
+
+select{
+    width: 12.85em;
 }
 
 button {

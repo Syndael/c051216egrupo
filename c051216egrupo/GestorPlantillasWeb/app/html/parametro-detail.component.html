@@ -2,20 +2,29 @@
     <h2>Detalle del parametro: {{parametro.parametro}}</h2>
 
     <div>
-        Es Texto: <input type="checkbox" [(ngModel)]="parametro.isText" />
+        Es Texto: <input id="checkTexto" type="checkbox" [(ngModel)]="parametro.isText" />
     </div>
 
+    <div *ngIf="parametro.isText == false">
+        <div>
+            <label>Parametro: </label>
+            <input [(ngModel)]="parametro.parametro" placeholder="Identificador Parametro" />
+        </div><div>
+            <label>Tipo:</label>
+            <select class="form-control" id="cbTipo"
+                    required
+                    [(ngModel)]="parametro.tipoId" name="cbTipo.value">
+                <option *ngFor="let tipo of tipos" [value]="tipo.id_tipo" id="tipo_{{tipo.tipo}}">{{tipo.tipo}}</option>
+            </select>
+        </div>
+    </div>
     <div *ngIf="parametro.isText">
         <div>
-            <label>Nombre: </label>
+            <label>Texto: </label>
         </div><div>
-            <input [(ngModel)]="parametro.parametro" placeholder="parametro" />
-        </div><div>
-            <label>Tipo: </label>
-        </div><div>
-            <input [(ngModel)]="parametro.tipo" placeholder="tipo" />
+            <textarea [(ngModel)]="parametro.parametro"></textarea>
         </div>
-        <button (click)="goBack()">Cancelar</button>
-        <button (click)="save()">Guardar</button>
     </div>
+    <button (click)="goBack()">Cancelar</button>
+    <button (click)="guardarParametro()">Guardar</button>
 </div>

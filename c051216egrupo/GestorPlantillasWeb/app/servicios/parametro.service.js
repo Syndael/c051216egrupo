@@ -25,8 +25,11 @@ var ParametroService = (function () {
             .catch(this.handleError);
     };
     ParametroService.prototype.getParametro = function (id) {
-        return this.getParametros()
-            .then(function (parametros) { return parametros.find(function (parametro) { return parametro.id_parametro === id; }); });
+        var url = this.parametrosUrl + "/" + id;
+        return this.http.get(url, { headers: this.headersAccept })
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
     };
     ParametroService.prototype.getParametroByPlantilla = function (id) {
         var url = this.parametrosUrl + "/?idPlantilla=" + id;
@@ -42,9 +45,14 @@ var ParametroService = (function () {
             .then(function () { return null; })
             .catch(this.handleError);
     };
-    ParametroService.prototype.create = function (name) {
+    ParametroService.prototype.create = function (parametroArg) {
         return this.http
-            .post(this.parametrosUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.parametrosUrl, JSON.stringify({
+            isText: parametroArg.isText,
+            parametro: parametroArg.parametro,
+            plantillaId: parametroArg.plantillaId,
+            tipoId: parametroArg.tipoId
+        }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json(); })
             .catch(this.handleError);

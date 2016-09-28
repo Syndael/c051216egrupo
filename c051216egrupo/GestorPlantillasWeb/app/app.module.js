@@ -21,7 +21,9 @@ var plantilla_service_1 = require('./servicios/plantilla.service');
 var parametros_component_1 = require('./componentes/parametros.component');
 var parametro_detail_component_1 = require('./componentes/parametro-detail.component');
 var parametro_service_1 = require('./servicios/parametro.service');
+var tipo_service_1 = require('./servicios/tipo.service');
 var app_routing_1 = require('./app.routing');
+var truncatepipe_1 = require('./utils/truncatepipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,10 +42,12 @@ var AppModule = (function () {
                 parametros_component_1.ParametrosComponent,
                 parametro_detail_component_1.ParametroDetailComponent,
                 plantilla_new_component_1.PlantillaNewComponent,
+                truncatepipe_1.TruncatePipe,
             ],
             providers: [
                 plantilla_service_1.PlantillaService,
-                parametro_service_1.ParametroService
+                parametro_service_1.ParametroService,
+                tipo_service_1.TipoService,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

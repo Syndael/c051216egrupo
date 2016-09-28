@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var parametro_1 = require('./../modelos/parametro');
 var plantilla_1 = require('./../modelos/plantilla');
 var parametro_service_1 = require('./../servicios/parametro.service');
 var ParametrosComponent = (function () {
@@ -25,17 +26,11 @@ var ParametrosComponent = (function () {
                 .then(function (parametros) { return _this.parametros = parametros; });
         }
     };
-    ParametrosComponent.prototype.add = function (name) {
-        var _this = this;
-        name = name.trim();
-        if (!name) {
-            return;
-        }
-        this.parametroService.create(name)
-            .then(function (parametro) {
-            _this.parametros.push(parametro);
-            _this.selectedParametro = null;
-        });
+    ParametrosComponent.prototype.add = function () {
+        var parAux = new parametro_1.Parametro();
+        parAux.plantillaId = this.plantilla.id_plantilla;
+        parAux.plantilla = this.plantilla;
+        this.selectedParametro = parAux;
     };
     ParametrosComponent.prototype.delete = function (parametro) {
         var _this = this;

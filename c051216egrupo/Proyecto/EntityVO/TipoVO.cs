@@ -9,5 +9,6 @@ namespace GestorPlantillas.EntityVO
     {
         public int id_tipo { get; set; }
         public String tipo { get; set; }
+        public Boolean oculto { get; set; }
     }
 }

@@ -25,8 +25,11 @@ var PlantillaService = (function () {
             .catch(this.handleError);
     };
     PlantillaService.prototype.getPlantilla = function (id) {
-        return this.getPlantillas()
-            .then(function (plantillas) { return plantillas.find(function (plantilla) { return plantilla.id_plantilla === id; }); });
+        var url = this.plantillasUrl + "/" + id;
+        return this.http.get(url, { headers: this.headersAccept })
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
     };
     PlantillaService.prototype.delete = function (id) {
         var url = this.plantillasUrl + "/" + id;

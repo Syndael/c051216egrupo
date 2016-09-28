@@ -24,7 +24,7 @@ namespace GestorPlantillas.Repository
         {
             using (var plantillasDB = new PlantillasDB())
             {
-                var listaTipos = plantillaDB.Tipo.ToList<Tipo>();
+                var listaTipos = plantillaDB.Tipo.SqlQuery("SELECT * FROM dbo.Tipoes WHERE oculto=0").ToList<Tipo>();
 
                 List<TipoVO> listaVO = listaTipos.ConvertAll<TipoVO>(delegate(Tipo t)
                 {

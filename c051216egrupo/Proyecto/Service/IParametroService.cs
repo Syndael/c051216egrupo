@@ -8,8 +8,8 @@ namespace GestorPlantillas.Service
         bool delete(int _id);
         ParametroVO get(int _id);
         ICollection<ParametroVO> lista();
-        bool post(ParametroVO _parametroVO);
-        bool put(ParametroVO _parametroVO);
+        ParametroVO post(ParametroVO _parametroVO);
+        ParametroVO put(ParametroVO _parametroVO);
 
         ICollection<ParametroVO> GetParametrosByPlantillaId(int _id);
     }

@@ -50,16 +50,21 @@ namespace GestorPlantillas.Repository
             return pVO;
         }
 
-        public Boolean Post(ParametroVO _parametroVO)
+        public ParametroVO Post(ParametroVO _parametroVO)
         {
             Parametro _parametro = this.parametroUtility.convertVO2Entity(_parametroVO);
 
             using (var plantillasDB = new PlantillasDB())
             {
+                if(_parametro.tipoID == 0)
+                {
+                    _parametro.Tipo = plantillasDB.Tipo.SqlQuery("SELECT * FROM dbo.Tipoes WHERE tipo='TEXTO'").FirstOrDefault();
+                    _parametro.tipoID = _parametro.Tipo.id;
+                }
                 _parametro = plantillasDB.Parametros.Add(_parametro);
                 plantillasDB.SaveChanges();
             }
-            return true;
+            return this.parametroUtility.convertEntity2VO(_parametro);
         }
 
         public Boolean Delete(int _id)
@@ -76,7 +81,7 @@ namespace GestorPlantillas.Repository
             return true;
         }
 
-        public Boolean Put(ParametroVO _parametroVO)
+        public ParametroVO Put(ParametroVO _parametroVO)
         {
             Parametro _parametro = this.parametroUtility.convertVO2Entity(_parametroVO);
 
@@ -86,7 +91,7 @@ namespace GestorPlantillas.Repository
                 plantillasDB.Entry(_parametro).State = System.Data.Entity.EntityState.Modified;
                 plantillasDB.SaveChanges();
             }
-            return true;
+            return this.parametroUtility.convertEntity2VO(_parametro);
         }
 
         public ICollection<ParametroVO> GetParametrosByPlantillaId(int _id)

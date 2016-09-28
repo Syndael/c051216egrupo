@@ -16,6 +16,7 @@ namespace GestorPlantillas.Utility
 
             _tipoVO.id_tipo = _tipo.id;
             _tipoVO.tipo = _tipo.tipo;
+            _tipoVO.oculto = _tipo.oculto;
 
             return _tipoVO;
        
@@ -27,6 +28,7 @@ namespace GestorPlantillas.Utility
 
             _tipo.id = _tipoVO.id_tipo;
             _tipo.tipo = _tipoVO.tipo;
+            _tipo.oculto = _tipoVO.oculto;
 
             return _tipo;
         }

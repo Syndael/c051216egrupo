@@ -36,15 +36,15 @@ namespace GestorPlantillasWeb.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]ParametroVO _parametroVO)
+        public ParametroVO Post([FromBody]ParametroVO _parametroVO)
         {
-            this.parametroService.post(_parametroVO);
+            return this.parametroService.post(_parametroVO);
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]ParametroVO _parametroVO)
+        public ParametroVO Put(int id, [FromBody]ParametroVO _parametroVO)
         {
-            this.parametroService.put(_parametroVO);
+            return this.parametroService.put(_parametroVO);
         }
 
         // DELETE api/values/5

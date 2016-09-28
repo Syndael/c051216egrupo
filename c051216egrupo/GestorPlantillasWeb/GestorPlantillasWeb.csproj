@@ -246,6 +246,8 @@
     <Content Include="app\html\plantilla-detail.component.html" />
     <Content Include="app\css\css.component.css" />
     <Content Include="app\html\plantillas.component.html" />
+    <Content Include="app\imgs\paramico.png" />
+    <Content Include="app\imgs\texico.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -260,6 +262,7 @@
     <TypeScriptCompile Include="app\componentes\parametros.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantilla-detail.component.ts" />
     <TypeScriptCompile Include="app\componentes\plantillas.component.ts" />
+    <TypeScriptCompile Include="app\servicios\tipo.service.ts" />
     <TypeScriptCompile Include="app\servicios\plantilla.service.ts" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -291,6 +294,7 @@
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
+    <TypeScriptCompile Include="app\utils\truncatepipe.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

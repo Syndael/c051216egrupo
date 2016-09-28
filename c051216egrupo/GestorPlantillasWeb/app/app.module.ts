@@ -13,7 +13,9 @@ import { PlantillaService }          from './servicios/plantilla.service';
 import { ParametrosComponent }   from './componentes/parametros.component';
 import { ParametroDetailComponent }  from './componentes/parametro-detail.component';
 import { ParametroService }          from './servicios/parametro.service';
+import { TipoService }          from './servicios/tipo.service';
 import { routing }              from './app.routing';
+import { TruncatePipe }         from './utils/truncatepipe';
 
 @NgModule({
     imports: [
@@ -29,10 +31,12 @@ import { routing }              from './app.routing';
         ParametrosComponent,
         ParametroDetailComponent,
         PlantillaNewComponent,
+        TruncatePipe,
     ],
     providers: [
         PlantillaService,
-        ParametroService
+        ParametroService,
+        TipoService,
     ],
     bootstrap: [AppComponent]
 })

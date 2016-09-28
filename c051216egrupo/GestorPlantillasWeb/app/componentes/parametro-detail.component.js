@@ -12,16 +12,31 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var parametro_1 = require('./../modelos/parametro');
 var parametro_service_1 = require('./../servicios/parametro.service');
+var tipo_service_1 = require('./../servicios/tipo.service');
 var ParametroDetailComponent = (function () {
-    function ParametroDetailComponent(parametroService, route) {
+    function ParametroDetailComponent(parametroService, route, tipoService) {
         this.parametroService = parametroService;
         this.route = route;
+        this.tipoService = tipoService;
     }
-    ParametroDetailComponent.prototype.ngOnInit = function () {
+    ParametroDetailComponent.prototype.getTipos = function () {
+        var _this = this;
+        this.tipoService
+            .getTipos()
+            .then(function (t) { return _this.tipos = t; });
     };
-    ParametroDetailComponent.prototype.save = function () {
-        this.parametroService.update(this.parametro)
-            .then(this.goBack);
+    ParametroDetailComponent.prototype.ngOnInit = function () {
+        this.getTipos();
+    };
+    ParametroDetailComponent.prototype.guardarParametro = function () {
+        if (this.parametro.id_parametro != undefined) {
+            this.parametroService.update(this.parametro)
+                .then(this.goBack);
+        }
+        else {
+            this.parametroService.create(this.parametro);
+            this.goBack();
+        }
     };
     ParametroDetailComponent.prototype.goBack = function () {
         this.parametro = null;
@@ -36,7 +51,7 @@ var ParametroDetailComponent = (function () {
             templateUrl: 'app/html/parametro-detail.component.html',
             styleUrls: ['app/css/css-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.ActivatedRoute, tipo_service_1.TipoService])
     ], ParametroDetailComponent);
     return ParametroDetailComponent;
 }());

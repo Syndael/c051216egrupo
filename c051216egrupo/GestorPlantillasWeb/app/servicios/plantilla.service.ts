@@ -22,8 +22,11 @@ export class PlantillaService {
     }
 
     getPlantilla(id: number): Promise<Plantilla> {
-        return this.getPlantillas()
-            .then(plantillas => plantillas.find(plantilla => plantilla.id_plantilla === id));
+        let url = `${this.plantillasUrl}/${id}`;
+        return this.http.get(url, { headers: this.headersAccept })
+            .toPromise()
+            .then(response => response.json() as Plantilla)
+            .catch(this.handleError);
     }
 
     delete(id: number): Promise<void> {

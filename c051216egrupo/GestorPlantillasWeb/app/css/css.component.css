@@ -2,13 +2,13 @@
   background-color: #CFDCD8 !important;
   color: white;
 }
-.plantillas {
+.plantillas, .parametros {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-.plantillas li {
+.plantillas li, .parametros li {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -18,20 +18,20 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.plantillas li:hover {
+.plantillas li:hover, .parametros li:hover {
   color: #608B7D;
   background-color: #DDD;
   left: .1em;
 }
-.plantillas li.selected:hover {
+.plantillas li.selected:hover, .parametros li.selected:hover {
   background-color: #BBDCD8 !important;
   color: white;
 }
-.plantillas .text {
+.plantillas .text, .parametros .text{
   position: relative;
   top: -3px;
 }
-.plantillas .badge {
+.plantillas .badge, .parametros .badge{
   display: inline-block;
   font-size: small;
   color: white;
@@ -64,4 +64,14 @@ button.delete {
   color:white;
 }
 
+.imgIco {
+    height: 1.4em;
+}
 
+.imgIco {
+    padding-left: .3em;
+}
+
+.parametros{
+    width: 21em;
+}

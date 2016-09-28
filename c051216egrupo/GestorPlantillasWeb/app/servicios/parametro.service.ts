@@ -22,8 +22,11 @@ export class ParametroService {
     }
 
     getParametro(id: number): Promise<Parametro> {
-        return this.getParametros()
-            .then(parametros => parametros.find(parametro => parametro.id_parametro === id));
+        let url = `${this.parametrosUrl}/${id}`;
+        return this.http.get(url, { headers: this.headersAccept })
+            .toPromise()
+            .then(response => response.json() as Parametro)
+            .catch(this.handleError);
     }
 
     getParametroByPlantilla(id: number): Promise<Parametro[]> {
@@ -42,9 +45,14 @@ export class ParametroService {
             .catch(this.handleError);
     }
 
-    create(name: string): Promise<Parametro> {
+    create(parametroArg: Parametro): Promise<Parametro> {
         return this.http
-            .post(this.parametrosUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.parametrosUrl, JSON.stringify({
+                isText: parametroArg.isText,
+                parametro: parametroArg.parametro,
+                plantillaId: parametroArg.plantillaId,
+                tipoId: parametroArg.tipoId
+            }), { headers: this.headers })
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);
