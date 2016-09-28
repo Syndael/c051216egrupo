@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Parametro }        from './../modelos/parametro';
@@ -10,7 +10,7 @@ import { ParametroService } from './../servicios/parametro.service';
     styleUrls: ['app/css/css-detail.component.css']
 })
 export class ParametroDetailComponent implements OnInit {
-    parametro: Parametro;
+    @Input() parametro: Parametro;
 
     constructor(
         private parametroService: ParametroService,

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var parametro_1 = require('./../modelos/parametro');
 var parametro_service_1 = require('./../servicios/parametro.service');
 var ParametroDetailComponent = (function () {
     function ParametroDetailComponent(parametroService, route) {
@@ -25,6 +26,10 @@ var ParametroDetailComponent = (function () {
     ParametroDetailComponent.prototype.goBack = function () {
         this.parametro = null;
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', parametro_1.Parametro)
+    ], ParametroDetailComponent.prototype, "parametro", void 0);
     ParametroDetailComponent = __decorate([
         core_1.Component({
             selector: 'detalle-parametro',
