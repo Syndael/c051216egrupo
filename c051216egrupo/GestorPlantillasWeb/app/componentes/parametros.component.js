@@ -20,12 +20,8 @@ var ParametrosComponent = (function () {
     ParametrosComponent.prototype.getParametros = function () {
         var _this = this;
         if (this.plantilla) {
-            //parametros = this.parametroService.getParametrosByPlantillaId(plantilla.id_plantilla);
-            console.log("llega el get de parametros de una plantilla");
-        }
-        else {
             this.parametroService
-                .getParametros()
+                .getParametroByPlantilla(this.plantilla.id_plantilla)
                 .then(function (parametros) { return _this.parametros = parametros; });
         }
     };

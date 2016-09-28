@@ -28,6 +28,13 @@ var ParametroService = (function () {
         return this.getParametros()
             .then(function (parametros) { return parametros.find(function (parametro) { return parametro.id_parametro === id; }); });
     };
+    ParametroService.prototype.getParametroByPlantilla = function (id) {
+        var url = this.parametrosUrl + "/?idPlantilla=" + id;
+        return this.http.get(url, { headers: this.headersAccept })
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     ParametroService.prototype.delete = function (id) {
         var url = this.parametrosUrl + "/" + id;
         return this.http.delete(url, { headers: this.headers })

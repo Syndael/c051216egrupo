@@ -1,11 +1,15 @@
 <h2>Mis parametros</h2>
 <ul class="parametros">
-  <li *ngFor="let parametro of parametros" (click)="onSelect(parametro)"
-      [class.selected]="parametro === selectedParametro">
-    <span class="badge">{{parametro.idParametro}}</span>
-    <span>{{parametro.parametro}}</span>
-    <button class="delete"
-      (click)="delete(parametro); $event.stopPropagation()">x</button>
-  </li>
+    <li *ngFor="let parametro of parametros" (click)="onSelect(parametro)"
+        [class.selected]="parametro === selectedParametro">
+        <span class="badge">{{parametro.idParametro}}</span>
+        <span>{{parametro.parametro}}</span>
+        <button class="delete"
+                (click)="delete(parametro); $event.stopPropagation()">
+            x
+        </button>
+    </li>
 </ul>
-<detalle-parametro></detalle-parametro>
+<div *ngIf="selectedParametro">
+    <detalle-parametro></detalle-parametro>
+</div>

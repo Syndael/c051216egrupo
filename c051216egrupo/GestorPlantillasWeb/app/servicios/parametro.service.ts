@@ -26,6 +26,14 @@ export class ParametroService {
             .then(parametros => parametros.find(parametro => parametro.id_parametro === id));
     }
 
+    getParametroByPlantilla(id: number): Promise<Parametro[]> {
+        let url = `${this.parametrosUrl}/?idPlantilla=${id}`;
+        return this.http.get(url, { headers: this.headersAccept })
+            .toPromise()
+            .then(response => response.json() as Parametro[])
+            .catch(this.handleError);
+    }
+
     delete(id: number): Promise<void> {
         let url = `${this.parametrosUrl}/${id}`;
         return this.http.delete(url, { headers: this.headers })

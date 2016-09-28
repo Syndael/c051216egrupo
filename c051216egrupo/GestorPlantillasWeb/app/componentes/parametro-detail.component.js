@@ -17,19 +17,13 @@ var ParametroDetailComponent = (function () {
         this.route = route;
     }
     ParametroDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.params.forEach(function (params) {
-            var id = +params['id'];
-            _this.parametroService.getParametro(id)
-                .then(function (parametro) { return _this.parametro = parametro; });
-        });
     };
     ParametroDetailComponent.prototype.save = function () {
         this.parametroService.update(this.parametro)
             .then(this.goBack);
     };
     ParametroDetailComponent.prototype.goBack = function () {
-        window.history.back();
+        this.parametro = null;
     };
     ParametroDetailComponent = __decorate([
         core_1.Component({

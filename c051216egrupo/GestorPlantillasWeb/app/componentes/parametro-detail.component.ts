@@ -12,27 +12,22 @@ import { ParametroService } from './../servicios/parametro.service';
 export class ParametroDetailComponent implements OnInit {
     parametro: Parametro;
 
-  constructor(
-      private parametroService: ParametroService,
-    private route: ActivatedRoute) {
-  }
+    constructor(
+        private parametroService: ParametroService,
+        private route: ActivatedRoute) {
+    }
 
-  ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      let id = +params['id'];
-      this.parametroService.getParametro(id)
-          .then(parametro => this.parametro = parametro);
-    });
-  }
+    ngOnInit(): void {
+    }
 
-  save(): void {
-      this.parametroService.update(this.parametro)
-      .then(this.goBack);
-  }
+    save(): void {
+        this.parametroService.update(this.parametro)
+            .then(this.goBack);
+    }
 
-  goBack(): void {
-    window.history.back();
-  }
+    goBack(): void {
+        this.parametro = null;
+    }
 }
 
 

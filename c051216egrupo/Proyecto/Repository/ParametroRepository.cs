@@ -95,9 +95,9 @@ namespace GestorPlantillas.Repository
 
             using (var plantillasDB = new PlantillasDB())
             {
-                String strQuery = String.Format("SELECT par FROM dbo.Parametroes as par WHERE plantillaID={0}", _id);
+                String strQuery = String.Format("SELECT * FROM dbo.Parametroes WHERE plantillaID={0}", _id);
                 ICollection<Parametro> parametrosEnt = plantillasDB.Parametros.SqlQuery(strQuery).ToList<Parametro>();
-
+                parametros = this.parametroUtility.convertListEntity2VO(parametrosEnt);
             }
 
             return parametros;
