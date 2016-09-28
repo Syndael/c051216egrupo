@@ -10,5 +10,7 @@ namespace GestorPlantillas.Repository
         ICollection<ParametroVO> Lista();
         bool Post(ParametroVO _parametroVO);
         bool Put(ParametroVO _parametroVO);
+
+        ICollection<ParametroVO> GetParametrosByPlantillaId(int _id);
     }
 }

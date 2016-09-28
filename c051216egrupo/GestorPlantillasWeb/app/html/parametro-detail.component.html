@@ -1,12 +1,21 @@
 <div *ngIf="parametro">
     <h2>Detalle del parametro: {{parametro.parametro}}</h2>
 
-    <label>Nombre: </label>
-    <input [(ngModel)]="parametro.parametro" placeholder="parametro" />
-    <label>Tipo: </label>
-    <input [(ngModel)]="parametro.tipo" placeholder="tipo" />
-    <button (click)="goBack()">Cancelar</button>
-    <button (click)="save()">Guardar</button>
+    <div>
+        Es Texto: <input type="checkbox" [(ngModel)]="parametro.isText" />
+    </div>
+
+    <div *ngIf="parametro.isText">
+        <div>
+            <label>Nombre: </label>
+        </div><div>
+            <input [(ngModel)]="parametro.parametro" placeholder="parametro" />
+        </div><div>
+            <label>Tipo: </label>
+        </div><div>
+            <input [(ngModel)]="parametro.tipo" placeholder="tipo" />
+        </div>
+        <button (click)="goBack()">Cancelar</button>
+        <button (click)="save()">Guardar</button>
+    </div>
 </div>
-
-

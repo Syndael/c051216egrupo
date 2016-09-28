@@ -10,5 +10,7 @@ namespace GestorPlantillas.Service
         ICollection<ParametroVO> lista();
         bool post(ParametroVO _parametroVO);
         bool put(ParametroVO _parametroVO);
+
+        ICollection<ParametroVO> GetParametrosByPlantillaId(int _id);
     }
 }
