@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var plantilla_1 = require('./../modelos/plantilla');
 var parametro_service_1 = require('./../servicios/parametro.service');
 var ParametrosComponent = (function () {
     function ParametrosComponent(parametroService, router) {
@@ -18,9 +19,15 @@ var ParametrosComponent = (function () {
     }
     ParametrosComponent.prototype.getParametros = function () {
         var _this = this;
-        this.parametroService
-            .getParametros()
-            .then(function (parametros) { return _this.parametros = parametros; });
+        if (this.plantilla) {
+            //parametros = this.parametroService.getParametrosByPlantillaId(plantilla.id_plantilla);
+            console.log("llega el get de parametros de una plantilla");
+        }
+        else {
+            this.parametroService
+                .getParametros()
+                .then(function (parametros) { return _this.parametros = parametros; });
+        }
     };
     ParametrosComponent.prototype.add = function (name) {
         var _this = this;
@@ -54,6 +61,10 @@ var ParametrosComponent = (function () {
     ParametrosComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedParametro.id_parametro]);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', plantilla_1.Plantilla)
+    ], ParametrosComponent.prototype, "plantilla", void 0);
     ParametrosComponent = __decorate([
         core_1.Component({
             selector: 'mis-parametros',

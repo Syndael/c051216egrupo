@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Router }            from '@angular/router';
 
 import { Parametro }                from './../modelos/parametro';
+import { Plantilla }                from './../modelos/plantilla';
 import { ParametroService }         from './../servicios/parametro.service';
 
 @Component({
@@ -12,15 +13,20 @@ import { ParametroService }         from './../servicios/parametro.service';
 export class ParametrosComponent implements OnInit {
     parametros: Parametro[];
     selectedParametro: Parametro;
+    @Input() plantilla: Plantilla;
 
   constructor(
     private parametroService: ParametroService,
     private router: Router) { }
 
   getParametros(): void {
-      this.parametroService
-          .getParametros()
-          .then(parametros => this.parametros = parametros);
+      if (this.plantilla){
+          this.parametros = this.parametroService.GetParametrosByPlantillaId(this.plantilla.id_plantilla);
+      } else {
+          this.parametroService
+              .getParametros()
+              .then(parametros => this.parametros = parametros);
+      }
   }
 
   add(name: string): void {
@@ -44,6 +50,7 @@ export class ParametrosComponent implements OnInit {
 
   ngOnInit(): void {
       this.getParametros();
+      
   }
 
   onSelect(parametro: Parametro): void {
@@ -53,6 +60,11 @@ export class ParametrosComponent implements OnInit {
   gotoDetail(): void {
       this.router.navigate(['/detail', this.selectedParametro.id_parametro]);
   }
+
+
+      
+
+  
 }
 
 

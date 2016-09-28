@@ -10,20 +10,23 @@ import { PlantillaService } from './../servicios/plantilla.service';
   styleUrls: ['app/css/css-detail.component.css']
 })
 export class PlantillaDetailComponent implements OnInit {
-  plantilla: Plantilla;
+    plantilla: Plantilla;
 
   constructor(
       private plantillaService: PlantillaService,
-    private route: ActivatedRoute) {
-  }
+      private route: ActivatedRoute
+            ) {
+    }
 
   ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      let id = +params['id'];
-      this.plantillaService.getPlantilla(id)
-        .then(plantilla => this.plantilla = plantilla);
-    });
+      this.route.params.forEach((params: Params) => {
+          let id = +params['id'];
+          this.plantillaService.getPlantilla(id)
+              .then(plantilla => this.plantilla = plantilla);
+      });
   }
+
+
 
   save(): void {
       this.plantillaService.update(this.plantilla)
@@ -33,6 +36,8 @@ export class PlantillaDetailComponent implements OnInit {
   goBack(): void {
     window.history.back();
   }
+
+  
 }
 
 

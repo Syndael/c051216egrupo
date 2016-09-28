@@ -8,9 +8,4 @@
       (click)="delete(parametro); $event.stopPropagation()">x</button>
   </li>
 </ul>
-<div *ngIf="selectedParametro">
-  <h2>
-    {{selectedParametro.parametro | uppercase}} seleccionado
-  </h2>
-  <button (click)="gotoDetail()">Detalle</button>
-</div>
+<detalle-parametro></detalle-parametro>
