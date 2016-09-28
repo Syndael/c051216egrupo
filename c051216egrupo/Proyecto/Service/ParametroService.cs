@@ -42,5 +42,10 @@ namespace GestorPlantillas.Service
         {
             return this.parametroRepository.Put(_parametroVO);
         }
+
+        public ICollection<ParametroVO> GetParametrosByPlantillaId(int _id)
+        {
+            return this.parametroRepository.GetParametrosByPlantillaId(_id);
+        }
     }
 }

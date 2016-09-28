@@ -52,5 +52,10 @@ namespace GestorPlantillasWeb.Controllers
         {
             this.parametroService.delete(id);
         }
+
+        public ICollection<ParametroVO> Get([FromUri]long id)
+        {
+            return this.parametroService.GetParametrosByPlantillaId((int)id);
+        }
     }
 }

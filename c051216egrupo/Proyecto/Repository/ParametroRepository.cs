@@ -14,7 +14,7 @@ namespace GestorPlantillas.Repository
         private PlantillasDB plantillasDB;
         private IParametroUtility parametroUtility;
 
-        
+
         public ParametroRepository(PlantillasDB _plantillasDB, IParametroUtility _parametroUtility)
         {
             this.plantillasDB = _plantillasDB;
@@ -27,7 +27,7 @@ namespace GestorPlantillas.Repository
             {
                 var listaParametros = plantillasDB.Parametros.ToList<Parametro>();
 
-                List<ParametroVO> listaVO = listaParametros.ConvertAll<ParametroVO>(delegate(Parametro p)
+                List<ParametroVO> listaVO = listaParametros.ConvertAll<ParametroVO>(delegate (Parametro p)
                 {
                     return this.parametroUtility.convertEntity2VO(p);
                 });
@@ -44,9 +44,9 @@ namespace GestorPlantillas.Repository
             {
                 p = plantillasDB.Parametros.Find(_id);
 
-              pVO = this.parametroUtility.convertEntity2VO(p);
+                pVO = this.parametroUtility.convertEntity2VO(p);
             }
-            
+
             return pVO;
         }
 
@@ -87,6 +87,20 @@ namespace GestorPlantillas.Repository
                 plantillasDB.SaveChanges();
             }
             return true;
+        }
+
+        public ICollection<ParametroVO> GetParametrosByPlantillaId(int _id)
+        {
+            ICollection<ParametroVO> parametros = new List<ParametroVO>();
+
+            using (var plantillasDB = new PlantillasDB())
+            {
+                String strQuery = String.Format("SELECT par FROM dbo.Parametroes as par WHERE plantillaID={0}", _id);
+                ICollection<Parametro> parametrosEnt = plantillasDB.Parametros.SqlQuery(strQuery).ToList<Parametro>();
+
+            }
+
+            return parametros;
         }
     }
 }
