@@ -17,5 +17,8 @@
         <button (click)="goBack()">Cancelar</button>
         <button (click)="save()">Guardar</button>
     </div>
-    <mis-parametros [plantilla]="plantilla"></mis-parametros>
+    <div *ngIf="nuevo">
+        <mis-parametros [plantilla]="plantilla"></mis-parametros>
+    </div>
+    
 </div>

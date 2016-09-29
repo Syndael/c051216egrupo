@@ -12,6 +12,7 @@ import { PlantillaService } from './../servicios/plantilla.service';
 
 export class PlantillaDetailComponent implements OnInit {
     plantilla: Plantilla;
+    nuevo: number;
 
     constructor(
         private plantillaService: PlantillaService,
@@ -21,8 +22,11 @@ export class PlantillaDetailComponent implements OnInit {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
             this.plantillaService.getPlantilla(id)
-                .then(plantilla => this.plantilla = plantilla);
+                .then(plantilla => this.plantilla = plantilla)
+                .then(plantilla => { if (plantilla.id_plantilla != 0) { this.nuevo = plantilla.id_plantilla } });
         });
+
+        
     }
 
     save(): void {
