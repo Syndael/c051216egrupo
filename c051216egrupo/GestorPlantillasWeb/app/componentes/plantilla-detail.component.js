@@ -21,7 +21,10 @@ var PlantillaDetailComponent = (function () {
         this.route.params.forEach(function (params) {
             var id = +params['id'];
             _this.plantillaService.getPlantilla(id)
-                .then(function (plantilla) { return _this.plantilla = plantilla; });
+                .then(function (plantilla) { return _this.plantilla = plantilla; })
+                .then(function (plantilla) { if (plantilla.id_plantilla != 0) {
+                _this.nuevo = plantilla.id_plantilla;
+            } });
         });
     };
     PlantillaDetailComponent.prototype.save = function () {
