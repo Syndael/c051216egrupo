@@ -1,4 +1,4 @@
-<div *ngIf="parametro">
+<div *ngIf="parametro && tipos">
     <h2>Detalle del parametro: {{parametro.parametro}}</h2>
 
     <div>
@@ -13,7 +13,7 @@
             <label>Tipo:</label>
             <select class="form-control" id="cbTipo"
                     required
-                    [(ngModel)]="parametro.tipoId" name="cbTipo.value">
+                    [(ngModel)]="parametro.tipoID" name="cbTipo.value">
                 <option *ngFor="let tipo of tipos" [value]="tipo.id_tipo" id="tipo_{{tipo.tipo}}">{{tipo.tipo}}</option>
             </select>
         </div>

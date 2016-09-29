@@ -47,12 +47,7 @@ var ParametroService = (function () {
     };
     ParametroService.prototype.create = function (parametroArg) {
         return this.http
-            .post(this.parametrosUrl, JSON.stringify({
-            isText: parametroArg.isText,
-            parametro: parametroArg.parametro,
-            plantillaId: parametroArg.plantillaId,
-            tipoId: parametroArg.tipoId
-        }), { headers: this.headers })
+            .post(this.parametrosUrl, JSON.stringify(parametroArg), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json(); })
             .catch(this.handleError);

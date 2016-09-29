@@ -47,12 +47,7 @@ export class ParametroService {
 
     create(parametroArg: Parametro): Promise<Parametro> {
         return this.http
-            .post(this.parametrosUrl, JSON.stringify({
-                isText: parametroArg.isText,
-                parametro: parametroArg.parametro,
-                plantillaId: parametroArg.plantillaId,
-                tipoId: parametroArg.tipoId
-            }), { headers: this.headers })
+            .post(this.parametrosUrl, JSON.stringify(parametroArg), { headers: this.headers })
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);
