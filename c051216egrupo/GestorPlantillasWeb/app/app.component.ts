@@ -5,7 +5,7 @@ import { Component }          from '@angular/core';
 
     template: `
     <nav>
-      <a routerLink="/plantillas" routerLinkActive="active">Plantillas</a>
+      <a id="menu_plan" routerLink="/plantillas" routerLinkActive="active">Plantillas</a>
     </nav>
     <router-outlet></router-outlet>
   `,

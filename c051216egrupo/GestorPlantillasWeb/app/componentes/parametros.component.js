@@ -23,7 +23,19 @@ var ParametrosComponent = (function () {
         if (this.plantilla) {
             this.parametroService
                 .getParametroByPlantilla(this.plantilla.id_plantilla)
-                .then(function (parametros) { return _this.parametros = parametros; });
+                .then(function (parametros) { _this.enviarParametros(parametros); });
+        }
+    };
+    ParametrosComponent.prototype.enviarParametros = function (params) {
+        this.parametros = params;
+        this.vistaprevia = "";
+        for (var i = 0; i < params.length; i++) {
+            if (params[i].isText) {
+                this.vistaprevia = this.vistaprevia + " " + params[i].parametro;
+            }
+            else {
+                this.vistaprevia = this.vistaprevia + " {{" + params[i].parametro + "}}";
+            }
         }
     };
     ParametrosComponent.prototype.add = function () {

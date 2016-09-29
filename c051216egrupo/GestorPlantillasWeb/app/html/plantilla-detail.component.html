@@ -3,14 +3,14 @@
 
     <div>
         <label>Nombre: </label>
-        <input [(ngModel)]="plantilla.nombre" placeholder="Nombre Plantilla" />
+        <input id="inp_{{plantilla.nombre}}" [(ngModel)]="plantilla.nombre" placeholder="Nombre Plantilla" />
     </div><div>
         <label>Creador: </label>
-        <input [(ngModel)]="plantilla.owner" placeholder="Creador" />
+        <input id="inp_{{plantilla.owner}}" [(ngModel)]="plantilla.owner" placeholder="Creador" />
     </div><div>
         <label>Descripci&#243;n: </label>
     </div><div>
-        <textarea [(ngModel)]="plantilla.descripcion"></textarea>
+        <textarea id="inp_{{plantilla.descripcion}}" [(ngModel)]="plantilla.descripcion"></textarea>
     </div>
 
     <div>

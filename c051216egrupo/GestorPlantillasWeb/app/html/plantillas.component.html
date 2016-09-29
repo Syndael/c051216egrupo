@@ -8,7 +8,7 @@
   <li *ngFor="let plantilla of plantillas; let indice = index"
       [class.selected]="plantilla === selectedPlantilla" (click)="gotoDetail(plantilla)">
     <span class="badge">{{indice+1}}</span>
-    <span>{{plantilla.nombre}}</span>
+    <span id="sp_{{plantilla.nombre}}">{{plantilla.nombre}}</span>
     <button class="delete"
       (click)="delete(plantilla); $event.stopPropagation()">x</button>
   </li>

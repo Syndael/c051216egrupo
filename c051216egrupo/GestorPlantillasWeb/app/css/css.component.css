@@ -1,68 +1,94 @@
 .selected {
-  background-color: #CFDCD8 !important;
-  color: white;
+    background-color: #CFDCD8 !important;
+    color: white;
 }
+
 .plantillas, .parametros {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
 }
+
+#conjuntoParametros {
+    display: flex;
+}
+
+#vistaprevia {
+    margin-left: 2em;
+}
+
+    #vistaprevia h3 {
+        font-size: smaller;
+    }
+
+textarea {
+    width: 24.2em;
+    height: 6em;
+}
+
 .plantillas li, .parametros li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
 }
-.plantillas li:hover, .parametros li:hover {
-  color: #608B7D;
-  background-color: #DDD;
-  left: .1em;
+
+    .plantillas li:hover, .parametros li:hover {
+        color: #608B7D;
+        background-color: #DDD;
+        left: .1em;
+    }
+
+    .plantillas li.selected:hover, .parametros li.selected:hover {
+        background-color: #BBDCD8 !important;
+        color: white;
+    }
+
+.plantillas .text, .parametros .text {
+    position: relative;
+    top: -3px;
 }
-.plantillas li.selected:hover, .parametros li.selected:hover {
-  background-color: #BBDCD8 !important;
-  color: white;
+
+.plantillas .badge, .parametros .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #608B7D;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
 }
-.plantillas .text, .parametros .text{
-  position: relative;
-  top: -3px;
-}
-.plantillas .badge, .parametros .badge{
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #608B7D;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
+
 button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
-button:hover {
-  background-color: #cfdcd8;
-}
-button.delete {
-  float:right;
-  margin-top: 2px;
-  margin-right: .8em;
-  background-color: gray !important;
-  color:white;
-}
+
+    button:hover {
+        background-color: #cfdcd8;
+    }
+
+    button.delete {
+        float: right;
+        margin-top: 2px;
+        margin-right: .8em;
+        background-color: gray !important;
+        color: white;
+    }
 
 .imgIco {
     height: 1.4em;
@@ -72,6 +98,6 @@ button.delete {
     padding-left: .3em;
 }
 
-.parametros{
+.parametros {
     width: 21em;
 }

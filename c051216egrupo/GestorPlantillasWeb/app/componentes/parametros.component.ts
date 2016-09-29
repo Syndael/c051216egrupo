@@ -15,6 +15,7 @@ export class ParametrosComponent implements OnInit {
     parametros: Parametro[];
     selectedParametro: Parametro;
     @Input() plantilla: Plantilla;
+    vistaprevia: String;
 
     constructor(
         private parametroService: ParametroService,
@@ -24,7 +25,19 @@ export class ParametrosComponent implements OnInit {
         if (this.plantilla) {
             this.parametroService
                 .getParametroByPlantilla(this.plantilla.id_plantilla)
-                .then(parametros => this.parametros = parametros);
+                .then(parametros => { this.enviarParametros(parametros) });
+        }
+    }
+
+    enviarParametros(params: Parametro[]): void {
+        this.parametros = params;
+        this.vistaprevia = "";
+        for (let i = 0; i < params.length; i++) {
+            if (params[i].isText) {
+                this.vistaprevia = this.vistaprevia + " " + params[i].parametro;
+            } else {
+                this.vistaprevia = this.vistaprevia + " {{" + params[i].parametro+"}}";
+            }
         }
     }
 

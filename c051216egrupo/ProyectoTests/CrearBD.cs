@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Proyecto.Tests
 {
     [TestClass()]
-    public class Class1Tests
+    public class CrearBD
     {
         private IPlantillaService service;
 
@@ -31,7 +31,7 @@ namespace Proyecto.Tests
         }
 
         [TestMethod()]
-        public void Class1Test()
+        public void CrearBDTest()
         {
             PlantillaVO plantillaVO = new PlantillaVO();
 

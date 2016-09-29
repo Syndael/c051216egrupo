@@ -8,7 +8,7 @@
     <div *ngIf="parametro.isText != true">
         <div>
             <label>Parametro: </label>
-            <input [(ngModel)]="parametro.parametro" placeholder="Identificador Parametro" />
+            <input id="inp_{{parametro.parametro}}" [(ngModel)]="parametro.parametro" placeholder="Identificador Parametro" />
         </div><div>
             <label>Tipo:</label>
             <select class="form-control" id="cbTipo"
@@ -22,9 +22,9 @@
         <div>
             <label>Texto: </label>
         </div><div>
-            <textarea [(ngModel)]="parametro.parametro"></textarea>
+            <textarea id="ta_{{parametro.parametro}}" [(ngModel)]="parametro.parametro"></textarea>
         </div>
     </div>
-    <button (click)="goBack()">Cancelar</button>
+    <button id="btCancelarParam" (click)="goBack()">Cancelar</button>
     <button (click)="guardarParametro()">Guardar</button>
 </div>
