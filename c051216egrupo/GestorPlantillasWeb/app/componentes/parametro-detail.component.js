@@ -13,11 +13,13 @@ var router_1 = require('@angular/router');
 var parametro_1 = require('./../modelos/parametro');
 var parametro_service_1 = require('./../servicios/parametro.service');
 var tipo_service_1 = require('./../servicios/tipo.service');
+var parametros_component_1 = require('./../componentes/parametros.component');
 var ParametroDetailComponent = (function () {
-    function ParametroDetailComponent(parametroService, route, tipoService) {
+    function ParametroDetailComponent(parametroService, route, tipoService, componenteParametros) {
         this.parametroService = parametroService;
         this.route = route;
         this.tipoService = tipoService;
+        this.componenteParametros = componenteParametros;
     }
     ParametroDetailComponent.prototype.getTipos = function () {
         var _this = this;
@@ -29,16 +31,18 @@ var ParametroDetailComponent = (function () {
         this.getTipos();
     };
     ParametroDetailComponent.prototype.guardarParametro = function () {
+        var _this = this;
         if (this.parametro.id_parametro != undefined) {
             this.parametroService.update(this.parametro)
-                .then(this.goBack);
+                .then(function (p) { _this.goBack(); });
         }
         else {
-            this.parametroService.create(this.parametro);
-            this.goBack();
+            this.parametroService.create(this.parametro)
+                .then(function (p) { _this.goBack(); });
         }
     };
     ParametroDetailComponent.prototype.goBack = function () {
+        this.componenteParametros.getParametros();
         this.parametro = null;
     };
     __decorate([
@@ -51,7 +55,7 @@ var ParametroDetailComponent = (function () {
             templateUrl: 'app/html/parametro-detail.component.html',
             styleUrls: ['app/css/css-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.ActivatedRoute, tipo_service_1.TipoService])
+        __metadata('design:paramtypes', [parametro_service_1.ParametroService, router_1.ActivatedRoute, tipo_service_1.TipoService, parametros_component_1.ParametrosComponent])
     ], ParametroDetailComponent);
     return ParametroDetailComponent;
 }());

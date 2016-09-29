@@ -5,6 +5,7 @@ import { Parametro }        from './../modelos/parametro';
 import { ParametroService } from './../servicios/parametro.service';
 import { Tipo }        from './../modelos/tipo';
 import { TipoService } from './../servicios/tipo.service';
+import { ParametrosComponent }        from './../componentes/parametros.component';
 
 @Component({
     selector: 'detalle-parametro',
@@ -19,7 +20,8 @@ export class ParametroDetailComponent implements OnInit {
     constructor(
         private parametroService: ParametroService,
         private route: ActivatedRoute,
-        private tipoService: TipoService) {}
+        private tipoService: TipoService,
+        private componenteParametros: ParametrosComponent) { }
 
     getTipos(): void {
         this.tipoService
@@ -34,14 +36,15 @@ export class ParametroDetailComponent implements OnInit {
     guardarParametro(): void {
         if (this.parametro.id_parametro != undefined) {
             this.parametroService.update(this.parametro)
-                .then(this.goBack);
+                .then(p => { this.goBack() });
         } else {
-            this.parametroService.create(this.parametro);
-            this.goBack();
+            this.parametroService.create(this.parametro)
+                .then(p => { this.goBack() });
         }
     }
 
     goBack(): void {
+        this.componenteParametros.getParametros();
         this.parametro = null;
     }
 }

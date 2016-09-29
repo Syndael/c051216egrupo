@@ -5,7 +5,7 @@
         Es Texto: <input id="checkTexto" type="checkbox" [(ngModel)]="parametro.isText" />
     </div>
 
-    <div *ngIf="parametro.isText == false">
+    <div *ngIf="parametro.isText != true">
         <div>
             <label>Parametro: </label>
             <input [(ngModel)]="parametro.parametro" placeholder="Identificador Parametro" />
